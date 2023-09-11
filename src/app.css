@@ -18,7 +18,7 @@ main {
   text-align: center;
   padding: 1em;
   max-width: 240px;
-  margin: 0 auto;
+  margin: 0 auto; 
 }
 
 h1 {
@@ -69,24 +69,23 @@ h2 {
 .button1 {
   background-color: white;
   color: black;
-  border: 2px solid #4CAF50;
+  border: 2px solid #4caf50;
 }
 
 .button1:hover {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
 }
 .button2 {
   background-color: white;
   color: black;
-  border: 2px solid #008CBA;
+  border: 2px solid #008cba;
 }
 
 .button2:hover {
-  background-color: #008CBA;
+  background-color: #008cba;
   color: white;
 }
-
 
 @media (min-width: 640px) {
   main {
