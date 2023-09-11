@@ -1,4 +1,5 @@
 <script>
+  import Footer from "./lib/Footer/Footer.svelte";
 </script>
 
   <div class="header">
@@ -13,9 +14,6 @@
   <div class="fileSelection">
 
   </div>
-</main>
 
-<div class="footer">
-  <h2>Footer/Platzhalter</h2>
-  <p class="cp">copyright of your mom copyright of your mom copyright of your mom</p>
-</div>
+  <Footer />
+</main>
