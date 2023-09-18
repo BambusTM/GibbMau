@@ -1,0 +1,29 @@
+/* MENUBAR */
+
+.menubar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+    overflow: hidden;
+  }
+  
+  .menubar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: left;
+    padding: 1em;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .menubar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .menubar a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
