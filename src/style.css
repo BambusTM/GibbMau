@@ -35,12 +35,10 @@ a:active {
 
 h1 { 
   color: #a01818; 
-  font-family: 'Righteous', cursive; 
   font-size: 2em; 
   font-weight: bolder; 
   line-height: 60px; 
   margin: 10px 0 20px; 
-  text-transform: uppercase; 
   text-shadow: 2px 2px 0 #000, 
 }
 
