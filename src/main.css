@@ -1,5 +1,53 @@
 .ru {
-    margin-top: 2em;
-    float: left;
-    
+    margin: auto;
+    margin-top: 5em;
+    width: 95%;
+    height: 90%;
+    background-color: #00000045;
+    border: .25em solid #000000;
 }
+
+.ru h1 {
+    color: #ffffff; 
+    margin-left: 1em;
+    text-align: left;
+    font-size: 3em; 
+    font-weight: bold; 
+    text-shadow: 2px 2px 0 #000, 
+}
+
+/* TABLE */
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    margin: auto;
+    margin-top: 5em;
+    width: 95%;
+}
+
+table th {
+    font-size: 1.5em;
+    color: rgb(255, 255, 255);
+}
+
+table tr {
+    font-size: 1em;
+    color: rgb(250, 250, 250);
+    border-bottom: 1px solid rgb(255, 255, 255);
+    border-collapse: collapse;
+}
+
+table tr:hover {
+    cursor: pointer;
+    color: #008cff;
+}
+
+table img {
+    float: left;
+    height: 2em;
+    padding: 2em;
+    padding-top: .2em;
+    padding-bottom: .2em;
+    padding-right: .5em;
+}
+

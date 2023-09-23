@@ -30,11 +30,10 @@ a:active {
 /* SCHRIFTEN */
 
 h1 { 
-  color: #00ddff; 
-  font-size: 2em; 
-  font-weight: bolder; 
-  line-height: 60px; 
-  margin: 10px 0 20px; 
+  color: #ffffff; 
+  text-align: center;
+  font-size: 3em; 
+  font-weight: bold; 
   text-shadow: 2px 2px 0 #000, 
 }
 
