@@ -2,36 +2,46 @@
 <html lang="en-US">
 
 <!-- HEAD -->
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Gibb Mau</title>
   <link rel="stylesheet" href="/style.css" />
-  <link rel="stylesheet" href="/src/menubar.css" />
+  <link rel="stylesheet" href="/src/menubar/menubar.css" />
+  <link rel="stylesheet" href="/src/menubar/about.css" />
+  <link rel="stylesheet" href="/src/main.css" />
   <link rel="stylesheet" href="/src/footer.css" />
 </head>
 
 <!-- MENUBAR -->
-
 <body>
   <header>
     <div class="menubar">
       <a class="active" href="index.html">
         <img class="logo" src="rsc/logo.png" alt="Gibb mau">
-        <p>Home</p>
+        <p class="txt">Home</p>
       </a>
-      <a href="src/favorites/favorites.html">
+      <div class="v-line">
+      </div>
+      <a href="src/page/settings/settings.html">
+        <p>Files</p>
+      </a>
+      <div class="v-line">
+      </div>
+      <a href="src/page/favorites/favorites.html">
         <p>Favorites</p>
       </a>
-      <a href="src/settings/settings.html">
-        <p>Settings</p>
-      </a>
-      <a class="menu_right" href="src/account/account.html">
-        <p>Account</p>
-        <img class="logo" src="rsc/logo.png" alt="Gibb mau">
-      </a>
+
+      <div class="dropdown">
+        <a href="src/page/account/account.html">
+          <p>Account</p>
+          <img class="logo" src="rsc/acc.png" alt="Gibb mau">
+        </a>
+        <div class="dropdown-content">
+          <a href="#">Profile</a>
+          <a href="#">Settings</a>
+          <a href="src/menubar/about.html">About</a>
+          <a href="#">Log Out</a>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -39,6 +49,7 @@
   <main>
     <div class="ru">
       <h1>Recently used</h1>
+
     </div>
   </main>
 
@@ -47,8 +58,9 @@
     <ul>
       <a href="#">Contact</a>
     </ul>
-    <p>©Copyright 2050 by your MOM. All rights reversed.</p>
+    <p>©Copyright 2023 by my MOM. All rights reversed.</p>
   </footer>
+
 </body>
 
 </html>
