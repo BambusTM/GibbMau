@@ -1,17 +1,13 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
-  font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
 }
 
 /* LINKS */
@@ -34,7 +30,7 @@ a:active {
 /* SCHRIFTEN */
 
 h1 { 
-  color: #a01818; 
+  color: #00ddff; 
   font-size: 2em; 
   font-weight: bolder; 
   line-height: 60px; 
@@ -59,13 +55,35 @@ button {
 button:hover {
   background-color: #430000;
   border: none;
-  color: white;
   padding: 1em 2em;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 1em;
 }
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: .75em;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 10px #000000;
+  background: #464646;
+}
+
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 7px #00a2ff;
+  background: #001f7d6b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  box-shadow: inset 0 0 7px #ea00ff;
+  background: #79007d31;
+}
+
+/* MAIN BODY */
 
 main {
   text-align: center;
@@ -74,7 +92,7 @@ main {
   margin: 0 auto; 
 }
 
-@media (min-width: 640px) {
+@media (min-width: 1px) {
   main {
     max-width: none;
   }
