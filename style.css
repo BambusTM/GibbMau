@@ -37,30 +37,6 @@ h1 {
   text-shadow: 2px 2px 0 #000, 
 }
 
-/* BUTTONS */
-
-button {
-  background-color: #880101;
-  border: none;
-  color: white;
-  padding: 1em 2em;
-  margin: 2em;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1em;
-}
-
-button:hover {
-  background-color: #430000;
-  border: none;
-  padding: 1em 2em;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1em;
-}
-
 /* SCROLLBAR */
 
 ::-webkit-scrollbar {

@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="/src/menubar/about.css" />
   <link rel="stylesheet" href="/src/main.css" />
   <link rel="stylesheet" href="/src/footer.css" />
+  <script src="main.js"></script>
 </head>
 
 <!-- MENUBAR -->
@@ -23,8 +24,8 @@
       </a>
       <div class="v-line">
       </div>
-      <a href="src/page/settings/settings.html">
-        <p>Files</p>
+      <a href="#">
+        <p>My Files</p>
       </a>
       <div class="v-line">
       </div>
@@ -38,10 +39,10 @@
           <img class="logo" src="rsc/acc.png" alt="404">
         </a>
         <div class="dropdown-content">
-          <a href="#">Profile</a>
-          <a href="#">Settings</a>
-          <a href="src/menubar/about.html">About</a>
-          <a href="#">Log Out</a>
+          <button>Profile</button>
+          <button type="about" onclick="openPopup()">About</button>
+          <button>Settings</button>
+          <button>Log out</button>
         </div>
       </div>
     </div>
@@ -49,6 +50,11 @@
 
   <!-- MAINPAGE -->
   <main>
+    <div class="popup" id="popup">
+      <h2>BOO!</h2>
+      <button type="done" onclick="closePopup()">done</button>
+    </div>
+
     <div class="ru">
       <h1>Recently used</h1>
       <table>
@@ -72,6 +78,23 @@
           <td>00.00.0000</td>
           <td>11.11.1111</td>
           <td>50</td>
+        </tr>
+        <tr>
+          <td><img src="rsc/folder_small.png" alt="404"></td>
+          <td>Your_Mom_gay</td>
+          <td>00.00.0000</td>
+          <td>11.11.1111</td>
+          <td>50</td>
+        </tr>
+        <tr>
+          <td><img src="rsc/folder_small.png" alt="404"></td>
+          <td>Your_Mom_gay</td>
+          <td>00.00.0000</td>
+          <td>11.11.1111</td>
+          <td>50</td>
+        </tr>
+        <tr>
+          <span class=""></span>
         </tr>
       </table>
     </div>
