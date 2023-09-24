@@ -106,16 +106,3 @@
   cursor: pointer;
 }
 
-.popup {
-  width: 400px;
-  background: rgb(161, 26, 26);
-  border-radius: 6px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  visibility: hidden;
-}
-
-.open-popup {
-  visibility: visible;
-}

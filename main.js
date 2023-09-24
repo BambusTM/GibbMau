@@ -1,10 +1,4 @@
-let popup = document.getElementById("popup");
-
 function openPopup() {
-    console.log("pressed");
-    popup.classList.add("open-popup");
-}
-
-function closePopup() {
-    popup.classList.remove("open-popup");
-}
+    var popup1 = document.getElementById("myPopup");
+    popup1.classList.toggle("show");
+  } 
