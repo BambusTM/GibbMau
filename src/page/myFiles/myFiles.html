@@ -2,11 +2,12 @@
 <html lang="en-US">
 
 <!-- HEAD -->
+
 <head>
   <title>GM-My Files</title>
   <link rel="stylesheet" href="/style.css" />
   <link rel="stylesheet" href="/src/menubar/menubar.css" />
-  <link rel="stylesheet" href="/src/menubar/about.css" />
+  <link rel="stylesheet" href="/src/menubar/popups.css" />
   <link rel="stylesheet" href="/src/footer.css" />
   <link rel="stylesheet" href="/src/page/myFiles/myFiles.css" />
 
@@ -23,7 +24,7 @@
       </a>
       <div class="v-line">
       </div>
-      <a class="active" href="#">
+      <a class="active" href="/src/page/myFiles/myFiles.html">
         <p>My Files</p>
       </a>
       <div class="v-line">
@@ -38,15 +39,26 @@
           <img class="logo" src="/rsc/acc.png" alt="404">
         </a>
         <div class="dropdown-content">
-          <button>Profile</button>
-          <button onclick="openPopup()">About</button>
-          <button>Settings</button>
-          <button>Log out</button>
+          <button onclick="togglePopup('profilePopup')">Profile</button>
+          <button onclick="togglePopup('aboutPopup')">About</button>
+          <button onclick="togglePopup('settingsPopup')">Settings</button>
+          <button onclick="togglePopup()">Log out</button>
         </div>
       </div>
     </div>
 
-    <span id="myPopup" class="popup">
+    <!-- PROFIL-POPUP -->
+    <span id="profilePopup" class="popup">
+      <form>
+        <div>
+          <h1>Hello BeReal</h1>
+          <button>close</button>
+        </div>
+      </form>
+    </span>
+
+    <!-- ABOUT-POPUP -->
+    <span id="aboutPopup" class="popup">
       <form>
         <div>
           <h1>Gibb Mau</h1>
@@ -63,12 +75,31 @@
         </div>
       </form>
     </span>
+
+    <!-- SETTINGS-POPUP -->
+    <span id="settingsPopup" class="popup">
+      <form>
+        <div>
+          <h1>Settings</h1>
+          <button>Close</button>
+          <div>
+            <label for="option">Select an option:</label>
+            <select id="option" onchange="handleSettings(this.value)">
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+            </select>
+          </div>
+        </div>
+      </form>
+    </span>
+
+
   </header>
 
   <!-- MAINPAGE -->
   <main>
     <div>
-
+      <h1>My Files</h1>
     </div>
   </main>
 
