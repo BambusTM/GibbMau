@@ -2,15 +2,19 @@
 <html lang="en-US">
 
 <!-- HEAD -->
+
 <head>
-  <title>Gibb Mau - Account</title>
+  <title>GM-Account</title>
   <link rel="stylesheet" href="/style.css" />
   <link rel="stylesheet" href="/src/menubar/menubar.css" />
   <link rel="stylesheet" href="/src/menubar/about.css" />
+  <link rel="stylesheet" href="/src/page/account/account.css" />
+
+  <script src="/main.js"></script>
 </head>
 
-<!-- MENUBAR -->
 <body>
+  <!-- MENUBAR -->
   <header>
     <div class="menubar">
       <a href="/index.html">
@@ -19,8 +23,8 @@
       </a>
       <div class="v-line">
       </div>
-      <a href="#">
-        <p>Files</p>
+      <a href="/src/page/myFiles/myFiles.html">
+        <p>My Files</p>
       </a>
       <div class="v-line">
       </div>
@@ -29,20 +33,47 @@
       </a>
 
       <div class="dropdown">
-        <a  class="active" href=#>
+        <a class="active" href="#">
           <p>Account</p>
           <img class="logo" src="/rsc/acc.png" alt="404">
         </a>
         <div class="dropdown-content">
-          <a href="#">Profile</a>
-          <a href="#">Settings</a>
-          <a href="src/menubar/about.html">About</a>
-          <a href="#">Log Out</a>
+          <button>Profile</button>
+          <button onclick="openPopup()">About</button>
+          <button>Settings</button>
+          <button>Log out</button>
         </div>
       </div>
     </div>
+
+    <span id="myPopup" class="popup">
+      <form>
+        <div>
+          <h1>Gibb Mau</h1>
+          <h3>Version: 0.0</h3>
+          <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa
+            qui officia deserunt mollit anim id est laborum."</p>
+          <button>close</button>
+        </div>
+      </form>
+    </span>
+
   </header>
 
-  
+  <!-- MAIN -->
+  <main>
+    <div>
+      <h2 class="title">User Profile</h2>
+
+    </div>
+  </main>
+
 </body>
+
 </html>

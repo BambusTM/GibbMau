@@ -1,0 +1,8 @@
+main div {
+    margin: auto;
+    margin-top: 5em;
+    width: 95%;
+    padding-bottom: 5em;
+    background-color: #00000045;
+    border: .25em solid #000000;
+}
