@@ -1,21 +1,23 @@
 form {
-  width: 40em;
-  height: auto;
-  padding: 1em;
-  background: #000000ca;
-  text-align: center;
-  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.897);
+  border: 2px solid rgb(0, 52, 131);
   position: fixed;
+  margin: 0;
+  padding: 2em;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
 }
 
 .popup {
   visibility: hidden;
+}
+
+.popup h2 {
+  margin-top: 2em;
   text-align: center;
-  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: 2em;
 }
 
 .popup button {
@@ -32,12 +34,57 @@ form {
 }
 
 .popup button:hover {
-  background-color: #136398;
+  background-color: rgb(0, 52, 131);
 }
 
 .show {
   visibility: visible;
 }
 
-/* SETTINGS */
+/* LOGIN */
+.popup .login {
+  border-radius: 2px;
+  padding: 0em 3em;
+  min-width: 25em;
+  min-height: 50%;
+}
+
+.login button {
+  width: 100%;
+  border-radius: 0;
+}
+
+.login button:hover {
+  background-color: rgb(0, 52, 131);
+  color: #9c9c9c;
+}
+
+.login a {
+  text-decoration: none;
+  color: #3498db;
+}
+
+.login a:hover{
+ color: rgb(0, 52, 131);
+}
+
+.textbox {
+  border-bottom: 2px solid white;
+  position: relative;
+  margin: 2em 0;
+}
+
+.stay {
+  margin-bottom: 1em;
+}
+
+.textbox input {
+  border: none;
+  background: none;
+  outline: none;
+  width: 100%;
+  color: #fff;
+  height: 3em;
+  font-size: 1em;
+}
 
