@@ -40,7 +40,7 @@
           <button onclick="togglePopup('profilePopup')">Profile</button>
           <button onclick="togglePopup('aboutPopup')">About</button>
           <button onclick="togglePopup('settingsPopup')">Settings</button>
-          <button onclick="togglePopup()">Log out</button>
+          <button onclick="togglePopup('loginPopup')">Log in</button>
         </div>
       </div>
     </div>
@@ -87,6 +87,26 @@
               <option value="option2">Option 2</option>
             </select>
           </div>
+        </div>
+      </form>
+    </span>
+
+    <!-- LOGIN-POPUP -->
+    <span id="loginPopup" class="popup">
+      <form class="login">
+        <div>
+          <h2>Log In</h2>
+          <div class="textbox">
+            <input type="text" placeholder="Username">
+          </div>
+          <div class="textbox">
+            <input type="password" placeholder="Password">
+          </div>
+        </div>
+        <div>
+          <button onclick="login('Benutzername', 'Passwort');">Log in</button>
+          <p>Alternatively, you can<a href="/src/page/account/account.html"> Sign up</a>.</p>
+        </div>
         </div>
       </form>
     </span>
