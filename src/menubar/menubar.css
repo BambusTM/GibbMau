@@ -13,7 +13,7 @@
 
 .menubar a {
   float: left;
-  color: #ffffff;
+  color: rgb(255, 255, 255);
   text-align: left;
   padding: 1em;
 }
@@ -39,11 +39,12 @@
 
 .menubar a:hover {
   font-weight: bolder;
-  color: #9900ff;
+  color: rgb(0, 52, 131);
 }
 
 .menubar a.active {
-  color: #0199ff;
+  color: #3498db;
+  ;
 }
 
 .menu_right {
@@ -102,7 +103,7 @@
 }
 
 .dropdown-content button:hover {
-  color: #0199ff;
+  color: #3498db;
   cursor: pointer;
 }
 
