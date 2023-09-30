@@ -1,4 +1,4 @@
-.ru {
+.box {
     margin: auto;
     margin-top: 5em;
     width: 95%;
@@ -7,7 +7,7 @@
     border: .25em solid #000000;
 }
 
-.ru h1 {
+.box h1 {
     color: #ffffff; 
     margin-left: 1em;
     text-align: left;
@@ -16,38 +16,16 @@
     text-shadow: 2px 2px 0 #000, 
 }
 
-/* TABLE */
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    margin: auto;
-    margin-top: 5em;
-    width: 95%;
+/* RECENTLY USED */
+
+
+.ru {
+    justify-content: center;
 }
 
-table th {
-    font-size: 1.5em;
-    color: rgb(255, 255, 255);
+.ru button {
+    position: relative;
+    border: none;
+    background: none;
+    width: 20em;
 }
-
-table tr {
-    font-size: 1em;
-    color: rgb(250, 250, 250);
-    border-bottom: 1px solid rgb(255, 255, 255);
-    border-collapse: collapse;
-}
-
-table tr:hover {
-    cursor: pointer;
-    color: #008cff;
-}
-
-table img {
-    float: left;
-    height: 2em;
-    padding: 2em;
-    padding-top: .2em;
-    padding-bottom: .2em;
-    padding-right: .5em;
-}
-
