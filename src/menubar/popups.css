@@ -10,6 +10,8 @@ form {
 }
 
 .popup {
+  border-radius: 2px;
+  padding: 0em 3em;
   visibility: hidden;
 }
 
@@ -31,20 +33,28 @@ form {
   font-size: 16px;
   text-align: center;
   text-decoration: none;
+  transition: 0.3s;
 }
 
 .popup button:hover {
   background-color: rgb(0, 52, 131);
+  transition: 0.3s;
 }
 
 .show {
   visibility: visible;
 }
 
+/* ABOUT */
+.popup .about {
+  text-align: center;
+}
+
+.about button {
+}
+
 /* LOGIN */
 .popup .login {
-  border-radius: 2px;
-  padding: 0em 3em;
   min-width: 25em;
   min-height: 50%;
 }
