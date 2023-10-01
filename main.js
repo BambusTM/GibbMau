@@ -33,11 +33,20 @@ function login(username, password) {
     });
 }
 
+// LOGIN-BUTTON
+function performLogin() {
+  const username = document.getElementById('loginUsername').value;
+  const password = document.getElementById('loginPassword').value;
+
+  login(username, password);
+}
+
 // SIGNUP
-function signup(username, password) {
+function signup(username, email, password) {
   // JSON-format
   const data = {
     username: username,
+    email: email,
     password: password
   };
 
@@ -64,29 +73,48 @@ function signup(username, password) {
     });
 }
 
+// REGISTER-BUTTON
+function registerUser() {
+  const username = document.getElementById('usernameInput').value;
+  const email = document.getElementById('emailInput').value;
+  const password = document.getElementById('passwordInput').value;
+
+  signup(username, email, password);
+}
+
 // POPUPS
 function togglePopup(popupId) {
-    var popup = document.getElementById(popupId);
-    if (popup) {
-      var allPopups = document.querySelectorAll(".popup");
-      allPopups.forEach(function (otherPopup) {
-        if (otherPopup !== popup) {
-          otherPopup.classList.remove("show");
-        }
-      });
-  
-      popup.classList.toggle("show");
-    }
+  var popup = document.getElementById(popupId);
+  if (popup) {
+    var allPopups = document.querySelectorAll(".popup");
+    allPopups.forEach(function (otherPopup) {
+      if (otherPopup !== popup) {
+        otherPopup.classList.remove("show");
+      }
+    });
+
+    popup.classList.toggle("show");
   }
+}
 
 // SETTINGS
 function handleSettings(option) {
-    switch (option) {
-        case "option1":
-            break;
-        case "option2":
-            break;
-        default:
-            console.log("Ungültige Option");
-    }
+  switch (option) {
+    case "option1":
+      break;
+    case "option2":
+      break;
+    default:
+      console.log("Ungültige Option");
+  }
+}
+
+// ACCOUNT-PAGE
+
+function accountPage() {
+  if (!login) {
+    document.getElementById('register').style.display = 'none';
+  } else {
+    document.getElementById('register').style.display = 'block';
+  }
 }
