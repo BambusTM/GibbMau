@@ -17,7 +17,6 @@
 /* LINKS */
 a:link {
   color: rgb(167, 0, 0);
-  transition: 0.2s;
 }
 
 a:visited {
@@ -26,7 +25,6 @@ a:visited {
 
 a:hover {
   color: rgb(0, 52, 131);
-  transition: 0.2s;
 }
 
 a:active {
