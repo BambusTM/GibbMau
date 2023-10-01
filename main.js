@@ -110,7 +110,6 @@ function handleSettings(option) {
 }
 
 // ACCOUNT-PAGE
-
 function accountPage() {
   if (!login) {
     document.getElementById('register').style.display = 'none';
