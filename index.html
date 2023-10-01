@@ -94,20 +94,18 @@
         <div>
           <h2>Log In</h2>
           <div class="textbox">
-            <input type="text" placeholder="Username">
+            <input type="text" id="loginUsername" placeholder="Username">
           </div>
           <div class="textbox">
-            <input type="password" placeholder="Password">
+            <input type="password" id="loginPassword" placeholder="Password">
           </div>
         </div>
         <div>
-          <button onclick="login('Benutzername', 'Passwort');">Log in</button>
+          <button onclick="performLogin();">Log in</button>
           <p>Alternatively, you can<a href="/src/page/account/account.html"> Sign up</a>.</p>
         </div>
-        </div>
       </form>
-    </span>
-
+    </span>    
 
   </header>
 
@@ -116,31 +114,40 @@
     <div class="box">
       <h1>Recently used</h1>
       <div class="ru">
+        <div>
+          <button>
+            <img src="/rsc/folder_small.png" alt="404">
+            <label for="">1</label>
+          </button>
+        </div>
 
-        <button>
-          <img src="/rsc/folder_small.png" alt="404">
-          <label for="">test</label>
-        </button>
+        <div>
+          <button>
+            <img src="/rsc/folder_small.png" alt="404">
+            <label for="">2</label>
+          </button>
+        </div>
 
-        <button>
-          <img src="/rsc/folder_small.png" alt="404">
-          <label for="">test</label>
-        </button>
+        <div>
+          <button>
+            <img src="/rsc/folder_small.png" alt="404">
+            <label for="">3</label>
+          </button>
+        </div>
 
-        <button>
-          <img src="/rsc/folder_small.png" alt="404">
-          <label for="">test</label>
-        </button>
+        <div>
+          <button>
+            <img src="/rsc/folder_small.png" alt="404">
+            <label for="">4</label>
+          </button>
+        </div>
 
-        <button>
-          <img src="/rsc/folder_small.png" alt="404">
-          <label for="">test</label>
-        </button>
-
-        <button onclick="getItem()">
-          <img src="/rsc/folder_small.png" alt="404">
-          <label for="">test</label>
-        </button>
+        <div>
+          <button>
+            <img src="/rsc/folder_small.png" alt="404">
+            <label for="">5</label>
+          </button>
+        </div>
 
       </div>
     </div>
