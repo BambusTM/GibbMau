@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+  <title>Gibb Mau</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/src/menubar/menubar.css" />
+  <link rel="stylesheet" href="/src/menubar/popups.css" />
+  <link rel="stylesheet" href="/src/main.css" />
+  <link rel="stylesheet" href="/src/footer.css" />
+
+</head>
+
+<body>
+  <!-- MENUBAR -->
+  <header>
+    <div class="menubar">
+      <a class="active" href="/index.html">
+        <img class="logo" src="/rsc/logo.png" alt="404">
+        <p class="txt">Home</p>
+      </a>
+      <div class="v-line">
+      </div>
+      <a href="/src/page/myFiles/myFiles.html">
+        <p>My Files</p>
+      </a>
+      <div class="v-line">
+      </div>
+      <a href="/src/page/favorites/favorites.html">
+        <p>Favorites</p>
+      </a>
+
+      <div class="dropdown">
+        <a href="/src/page/account/account.html">
+          <p>Account</p>
+          <img class="logo" src="/rsc/acc.png" alt="404">
+        </a>
+        <div class="dropdown-content">
+          <button onclick="togglePopup('profilePopup')">Profile</button>
+          <button onclick="togglePopup('aboutPopup')">About</button>
+          <button onclick="togglePopup('settingsPopup')">Settings</button>
+          <button onclick="togglePopup('loginPopup')">Log in</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROFIL-POPUP -->
+    <span id="profilePopup" class="popup">
+      <form>
+        <div>
+          <h1>Hello BeReal</h1>
+          <button>close</button>
+        </div>
+      </form>
+    </span>
+
+    <!-- ABOUT-POPUP -->
+    <span id="aboutPopup" class="popup">
+      <form class="about">
+        <div>
+          <h1>Gibb Mau</h1>
+          <h3>Version: 0.0 (undeployed)</h3>
+          <p>
+            Gibb Mau is a file sharing project, created by students of the IT-vocational school in Switzerland, Bern.
+            <br>
+            The servers are privately hosted and there is no guarantee for theire availability. <br>
+          </p>
+          <button>close</button>
+        </div>
+      </form>
+    </span>
+
+    <!-- SETTINGS-POPUP -->
+    <span id="settingsPopup" class="popup">
+      <form>
+        <div>
+          <h1>Settings</h1>
+          <button>Close</button>
+          <div>
+            <label for="option">Select an option:</label>
+            <select id="option" onchange="handleSettings(this.value)">
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+            </select>
+          </div>
+        </div>
+      </form>
+    </span>
+
+    <!-- LOGIN-POPUP -->
+    <span id="loginPopup" class="popup">
+      <form class="login">
+        <div>
+          <h2>Log In</h2>
+          <div class="textbox">
+            <input type="text" id="loginUsername" placeholder="Username">
+          </div>
+          <div class="textbox">
+            <input type="password" id="loginPassword" placeholder="Password">
+          </div>
+        </div>
+        <div>
+          <button onclick="performLogin();">Log in</button>
+          <p>Alternatively, you can<a href="/src/page/account/account.html"> Sign up</a>.</p>
+        </div>
+      </form>
+    </span>    
+
+  </header>
+
+  <!-- MAINPAGE -->
+  <main>
+    <div class="box">
+      <h1>Recently used</h1>
+      <div class="ru">
+        <div>
+          <button>
+            <img src="/rsc/folder_small.png" alt="404">
+            <label for="">1</label>
+          </button>
+        </div>
+
+        <div>
+          <button>
+            <img src="/rsc/folder_small.png" alt="404">
+            <label for="">2</label>
+          </button>
+        </div>
+
+        <div>
+          <button>
+            <img src="/rsc/folder_small.png" alt="404">
+            <label for="">3</label>
+          </button>
+        </div>
+
+        <div>
+          <button>
+            <img src="/rsc/folder_small.png" alt="404">
+            <label for="">4</label>
+          </button>
+        </div>
+
+        <div>
+          <button>
+            <img src="/rsc/folder_small.png" alt="404">
+            <label for="">5</label>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <ul>
+      <a href="#">Contact</a>
+    </ul>
+    <p>©Copyright 2023 by my MOM. All rights reversed.</p>
+    <p>dini fetti muätter du hurensohn</p>
+  </footer>
+  <script src="/main.js"></script>
+</body>
+
+</html>
