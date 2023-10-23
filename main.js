@@ -1,43 +1,47 @@
 // LOGIN
-const loginUrl = '/auth/login';
-const signupUrl = '/auth/signup';
+const loginUrl = "localhost:3000/auth/login";
+const signupUrl = "/auth/signup";
 
 // login-function
-function login(username, password) {
+async function login(username, password) {
   // JSON-format
   const data = {
     username: username,
-    password: password
+    password: password,
   };
-
-  fetch(loginUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`Statuscode HTTP-ERROR -> ${response.status}`);
-      }
-      // successful login
-      return response.json();
+  try {
+    let result = await fetch(loginUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
     })
-    .then(userData => {
-      // use userdata after login
-      console.log('Successful lgoin:', userData);
-    })
-    .catch(error => {
-      console.error('Login ERROR ->', error);
-    });
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Statuscode HTTP-ERROR -> ${response.status}`);
+        }
+        // successful login
+        return response.json();
+      })
+      .then((userData) => {
+        // use userdata after login
+        console.log("Successful lgoin:", userData);
+      })
+      .catch((error) => {
+        console.error("Login ERROR ->", error);
+      });
+    alert(result);
+  } catch (err) {
+    alert(err);
+  }
 }
 
 // LOGIN-BUTTON
 function performLogin() {
-  const username = document.getElementById('loginUsername').value;
-  const password = document.getElementById('loginPassword').value;
-
+  const username = document.getElementById("loginUsername").value;
+  const password = document.getElementById("loginPassword").value;
+  console.log("Started login");
   login(username, password);
 }
 
@@ -47,37 +51,37 @@ function signup(username, email, password) {
   const data = {
     username: username,
     email: email,
-    password: password
+    password: password,
   };
 
   fetch(signupUrl, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(data)
+    body: JSON.stringify(data),
   })
-    .then(response => {
+    .then((response) => {
       if (!response.ok) {
         throw new Error(`Statuscode HTTP-ERROR -> ${response.status}`);
       }
       // successful registration
       return response.json();
     })
-    .then(userData => {
+    .then((userData) => {
       // use data after registration
-      console.log('Successful registration:', userData);
+      console.log("Successful registration:", userData);
     })
-    .catch(error => {
-      console.error('Registration ERROR ->', error);
+    .catch((error) => {
+      console.error("Registration ERROR ->", error);
     });
 }
 
 // REGISTER-BUTTON
 function registerUser() {
-  const username = document.getElementById('usernameInput').value;
-  const email = document.getElementById('emailInput').value;
-  const password = document.getElementById('passwordInput').value;
+  const username = document.getElementById("usernameInput").value;
+  const email = document.getElementById("emailInput").value;
+  const password = document.getElementById("passwordInput").value;
 
   signup(username, email, password);
 }
@@ -112,8 +116,8 @@ function handleSettings(option) {
 // ACCOUNT-PAGE
 function accountPage() {
   if (!login) {
-    document.getElementById('register').style.display = 'none';
+    document.getElementById("register").style.display = "none";
   } else {
-    document.getElementById('register').style.display = 'block';
+    document.getElementById("register").style.display = "block";
   }
 }
