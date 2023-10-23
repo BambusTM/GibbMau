@@ -2,6 +2,7 @@
 .menubar {
   display: flex;
   position: fixed;
+  flex-wrap: nowrap;
   top: 0;
   left: 0;
   width: 100%;
@@ -13,6 +14,7 @@
 
 .menubar a {
   float: left;
+  flex-wrap: nowrap;
   color: rgb(255, 255, 255);
   text-align: left;
   padding: 1em;
