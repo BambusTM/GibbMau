@@ -1,64 +1,78 @@
-// LOGIN
-const loginUrl = "localhost:3000/auth/login";
-const signupUrl = "/auth/signup";
+// @ts-check
 
+import * as jose from 'https://esm.run/jose';
+
+// LOGIN
+const loginUrl = "http://localhost:3000/auth/login";
+const signupUrl = "/auth/signup";
+// @param username string
 // login-function
-async function login(username, password) {
+/**
+ * @param {string} username
+ * @param {string} password
+ */
+function login(username, password) {
   // JSON-format
   const data = {
     username: username,
     password: password,
   };
-  try {
-    let result = await fetch(loginUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
+  let result = fetch(loginUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((value) => {
+      if (value.status === 401 || value.status === 404) {
+        alert("Wrong Username or Password");
+      }
+
+      if (value.ok) {
+        value.json().then((access_token) => {
+          jose.
+        });
+      }
     })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Statuscode HTTP-ERROR -> ${response.status}`);
-        }
-        // successful login
-        return response.json();
-      })
-      .then((userData) => {
-        // use userdata after login
-        console.log("Successful lgoin:", userData);
-      })
-      .catch((error) => {
-        console.error("Login ERROR ->", error);
-      });
-    alert(result);
-  } catch (err) {
-    alert(err);
-  }
+    .catch((err) => {
+      alert("error: " + err);
+    });
 }
 
 // LOGIN-BUTTON
 function performLogin() {
   const username = document.getElementById("loginUsername").value;
   const password = document.getElementById("loginPassword").value;
-  console.log("Started login");
+  if (
+    (typeof username !== "string" && typeof password !== "string") ||
+    (!username && !password)
+  ) {
+    throw Error("Lul");
+    return;
+  }
   login(username, password);
 }
 
 // SIGNUP
+/**
+ * @param {string} username
+ * @param {string} email
+ * @param {string} password
+ */
 function signup(username, email, password) {
   // JSON-format
   const data = {
     username: username,
-    email: email,
     password: password,
   };
 
   fetch(signupUrl, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
+      accept: "application/json",
     },
+
     body: JSON.stringify(data),
   })
     .then((response) => {
