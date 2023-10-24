@@ -1,148 +1,154 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-US">
+  <!-- HEAD -->
 
-<!-- HEAD -->
+  <head>
+    <title>GM-Account</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/src/menubar/menubar.css" />
+    <link rel="stylesheet" href="/src/menubar/popups.css" />
+    <link rel="stylesheet" href="/src/page/account/account.css" />
 
-<head>
-  <title>GM-Account</title>
-  <link rel="stylesheet" href="/style.css" />
-  <link rel="stylesheet" href="/src/menubar/menubar.css" />
-  <link rel="stylesheet" href="/src/menubar/popups.css" />
-  <link rel="stylesheet" href="/src/page/account/account.css" />
+    <script src="/main.js" type="module"></script>
+  </head>
 
-  <script src="/main.js"></script>
-</head>
-
-<body>
-  <!-- MENUBAR -->
-  <header>
-    <div class="menubar">
-      <a href="/index.html">
-        <img class="logo" src="/rsc/logo.png" alt="404">
-        <p class="txt">Home</p>
-      </a>
-      <div class="v-line">
-      </div>
-      <a href="/src/page/myFiles/myFiles.html">
-        <p>My Files</p>
-      </a>
-      <div class="v-line">
-      </div>
-      <a href="/src/page/favorites/favorites.html">
-        <p>Favorites</p>
-      </a>
-
-      <div class="dropdown">
-        <a class="active" href="/src/page/account/account.html">
-          <p>Account</p>
-          <img class="logo" src="/rsc/acc.png" alt="404">
+  <body>
+    <!-- MENUBAR -->
+    <header>
+      <div class="menubar">
+        <a href="/index.html">
+          <img class="logo" src="/rsc/logo.png" alt="404" />
+          <p class="txt">Home</p>
         </a>
-        <div class="dropdown-content">
-          <button onclick="togglePopup('profilePopup')">Profile</button>
-          <button onclick="togglePopup('aboutPopup')">About</button>
-          <button onclick="togglePopup('settingsPopup')">Settings</button>
-        </div>
-      </div>
-    </div>
+        <div class="v-line"></div>
+        <a href="/src/page/myFiles/myFiles.html">
+          <p>My Files</p>
+        </a>
+        <div class="v-line"></div>
+        <a href="/src/page/favorites/favorites.html">
+          <p>Favorites</p>
+        </a>
 
-    <!-- PROFIL-POPUP -->
-    <span id="profilePopup" class="popup">
-      <form>
-        <div>
-          <h1>Hello BeReal</h1>
-          <button>close</button>
-        </div>
-      </form>
-    </span>
-
-    <!-- ABOUT-POPUP -->
-    <span id="aboutPopup" class="popup">
-      <form class="about">
-        <div>
-          <h1>Gibb Mau</h1>
-          <h3>Version: 0.0 (undeployed)</h3>
-          <p>
-            Gibb Mau is a file sharing project, created by students of the IT-vocational school in Switzerland, Bern.
-            <br>
-            The servers are privately hosted and there is no guarantee for theire availability. <br>
-          </p>
-          <button>close</button>
-        </div>
-      </form>
-    </span>
-
-    <!-- SETTINGS-POPUP -->
-    <span id="settingsPopup" class="popup">
-      <form>
-        <div>
-          <h1>Settings</h1>
-          <button>Close</button>
-          <div>
-            <label for="option">Select an option:</label>
-            <select id="option" onchange="handleSettings(this.value)">
-              <option value="option1">Option 1</option>
-              <option value="option2">Option 2</option>
-            </select>
+        <div class="dropdown">
+          <a class="active" href="/src/page/account/account.html">
+            <p>Account</p>
+            <img class="logo" src="/rsc/acc.png" alt="404" />
+          </a>
+          <div class="dropdown-content">
+            <button onclick="togglePopup('profilePopup')">Profile</button>
+            <button onclick="togglePopup('aboutPopup')">About</button>
+            <button onclick="togglePopup('settingsPopup')">Settings</button>
           </div>
         </div>
-      </form>
-    </span>
+      </div>
 
-  </header>
+      <!-- PROFIL-POPUP -->
+      <span id="profilePopup" class="popup">
+        <form>
+          <div>
+            <h1>Hello BeReal</h1>
+            <button>close</button>
+          </div>
+        </form>
+      </span>
 
-  <!-- MAIN -->
-  <main>
-    <div id="register">
-      <div class="blurr">
+      <!-- ABOUT-POPUP -->
+      <span id="aboutPopup" class="popup">
+        <form class="about">
+          <div>
+            <h1>Gibb Mau</h1>
+            <h3>Version: 0.0 (undeployed)</h3>
+            <p>
+              Gibb Mau is a file sharing project, created by students of the
+              IT-vocational school in Switzerland, Bern.
+              <br />
+              The servers are privately hosted and there is no guarantee for
+              theire availability. <br />
+            </p>
+            <button>close</button>
+          </div>
+        </form>
+      </span>
+
+      <!-- SETTINGS-POPUP -->
+      <span id="settingsPopup" class="popup">
+        <form>
+          <div>
+            <h1>Settings</h1>
+            <button>Close</button>
+            <div>
+              <label for="option">Select an option:</label>
+              <select id="option" onchange="handleSettings(this.value)">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </span>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+      <div id="register">
+        <div class="blurr">
+          <h2>IF YOU SEE THIS, EVERYTHING HAS WORKED AND YOU ARE LOGGED IN</h2>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+              quasi aperiam iste eligendi repellendus, odio, recusandae
+              necessitatibus obcaecati, rem nisi officiis aliquam non eum
+              dolorum quis consectetur. Recusandae, consequuntur. Libero.
+            </p>
+          </div>
+        </div>
+
+        <form class="register">
+          <div>
+            <h2>Gibb Mau dini Infos</h2>
+            <div class="textbox">
+              <input type="text" id="usernameInput" placeholder="Username" />
+            </div>
+            <div class="textbox">
+              <input type="email" id="emailInput" placeholder="E-Mail" />
+            </div>
+            <div class="textbox">
+              <input
+                type="password"
+                id="passwordInput"
+                placeholder="Password"
+              />
+            </div>
+            <div class="textbox">
+              <input
+                type="password"
+                id="passwordInput"
+                placeholder="Confirm password"
+              />
+            </div>
+            <input type="checkbox" name="agbs" id="agbs" />
+            <label>
+              By checking this box, you're selling your soul to me. <br />
+              (not optional)
+            </label>
+          </div>
+          <div>
+            <button onclick="registerUser();">Register</button>
+          </div>
+        </form>
+      </div>
+
+      <div id="account">
         <h2>IF YOU SEE THIS, EVERYTHING HAS WORKED AND YOU ARE LOGGED IN</h2>
         <div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt quasi aperiam iste eligendi repellendus, odio,
-            recusandae necessitatibus obcaecati, rem nisi officiis aliquam non eum dolorum quis consectetur. Recusandae,
-            consequuntur. Libero.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt quasi
+            aperiam iste eligendi repellendus, odio, recusandae necessitatibus
+            obcaecati, rem nisi officiis aliquam non eum dolorum quis
+            consectetur. Recusandae, consequuntur. Libero.
           </p>
         </div>
       </div>
-
-      <form class="register">
-        <div>
-          <h2>Gibb Mau dini Infos</h2>
-          <div class="textbox">
-            <input type="text" id="usernameInput" placeholder="Username">
-          </div>
-          <div class="textbox">
-            <input type="email" id="emailInput" placeholder="E-Mail">
-          </div>
-          <div class="textbox">
-            <input type="password" id="passwordInput" placeholder="Password">
-          </div>
-          <div class="textbox">
-            <input type="password" id="passwordInput" placeholder="Confirm password">
-          </div>
-          <input type="checkbox" name="agbs" id="agbs">
-          <label>
-            By checking this box, you're selling your soul to me. <br> (not optional)
-          </label>
-        </div>
-        <div>
-          <button onclick="registerUser();">Register</button>
-        </div>
-      </form>
-    </div>
-
-
-    <div id="account">
-      <h2>IF YOU SEE THIS, EVERYTHING HAS WORKED AND YOU ARE LOGGED IN</h2>
-      <div>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt quasi aperiam iste eligendi repellendus, odio,
-          recusandae necessitatibus obcaecati, rem nisi officiis aliquam non eum dolorum quis consectetur. Recusandae,
-          consequuntur. Libero.
-        </p>
-      </div>
-    </div>
-  </main>
-
-</body>
-
+    </main>
+  </body>
 </html>
