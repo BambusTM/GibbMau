@@ -1,6 +1,9 @@
 // @ts-check
+import * as jose_import from "https://esm.run/jose";
+/** @typedef {import('./types/node_modules/jose/dist/types')} jose */
 
-import * as jose from 'https://esm.run/jose';
+/** @type {import('./types/node_modules/jose/dist/types')} */
+const jose = jose_import;
 
 // LOGIN
 const loginUrl = "http://localhost:3000/auth/login";
@@ -30,9 +33,7 @@ function login(username, password) {
       }
 
       if (value.ok) {
-        value.json().then((access_token) => {
-          jose.
-        });
+        value.json().then((access_token) => {});
       }
     })
     .catch((err) => {
