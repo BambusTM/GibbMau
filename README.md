@@ -1,4 +1,5 @@
 # GibbMau
+The best filesharing plattform out there!
 
 ## Setup
 
