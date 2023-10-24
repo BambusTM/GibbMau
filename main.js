@@ -96,13 +96,17 @@ function registerUser() {
   const username = document.getElementById("usernameInput");
   const email = document.getElementById("emailInput");
   const password = document.getElementById("passwordInput");
+  const confirmPassword = document.getElementById("confirmPassword");
 
   if (
     username instanceof HTMLInputElement &&
-    email instanceof HTMLInputElement &&
-    password instanceof HTMLInputElement
+    email instanceof HTMLInputElement && // evtl. mail entfernen
+    password instanceof HTMLInputElement &&
+    password == confirmPassword
   ) {
     signup(username.value, email.value, password.value);
+  } else if (password != confirmPassword) {
+    console.log("wrong Password");
   }
 }
 
@@ -130,14 +134,5 @@ function handleSettings(option) {
       break;
     default:
       console.log("Ungültige Option");
-  }
-}
-
-// ACCOUNT-PAGE
-function accountPage() {
-  if (!login) {
-    document.getElementById("register").style.display = "none";
-  } else {
-    document.getElementById("register").style.display = "block";
   }
 }
