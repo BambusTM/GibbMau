@@ -1,6 +1,7 @@
 // @ts-check
+/** @typedef {import('./types/node_modules/jose/dist/types')} jose_import */
+// @ts-ignore
 import * as jose_import from "https://esm.run/jose";
-/** @typedef {import('./types/node_modules/jose/dist/types')} jose */
 
 /** @type {import('./types/node_modules/jose/dist/types')} */
 const jose = jose_import;
@@ -43,16 +44,14 @@ function login(username, password) {
 
 // LOGIN-BUTTON
 function performLogin() {
-  const username = document.getElementById("loginUsername").value;
-  const password = document.getElementById("loginPassword").value;
+  const username = document.getElementById("loginUsername");
+  const password = document.getElementById("loginPassword");
   if (
-    (typeof username !== "string" && typeof password !== "string") ||
-    (!username && !password)
+    username instanceof HTMLInputElement &&
+    password instanceof HTMLInputElement
   ) {
-    throw Error("Lul");
-    return;
+    login(username.value, password.value);
   }
-  login(username, password);
 }
 
 // SIGNUP
@@ -94,11 +93,17 @@ function signup(username, email, password) {
 
 // REGISTER-BUTTON
 function registerUser() {
-  const username = document.getElementById("usernameInput").value;
-  const email = document.getElementById("emailInput").value;
-  const password = document.getElementById("passwordInput").value;
+  const username = document.getElementById("usernameInput");
+  const email = document.getElementById("emailInput");
+  const password = document.getElementById("passwordInput");
 
-  signup(username, email, password);
+  if (
+    username instanceof HTMLInputElement &&
+    email instanceof HTMLInputElement &&
+    password instanceof HTMLInputElement
+  ) {
+    signup(username.value, email.value, password.value);
+  }
 }
 
 // POPUPS
