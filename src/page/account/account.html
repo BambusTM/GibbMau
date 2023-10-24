@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="/src/menubar/menubar.css" />
     <link rel="stylesheet" href="/src/menubar/popups.css" />
     <link rel="stylesheet" href="/src/page/account/account.css" />
-
     <script src="/main.js" type="module"></script>
   </head>
 
@@ -27,6 +26,10 @@
         <div class="v-line"></div>
         <a href="/src/page/favorites/favorites.html">
           <p>Favorites</p>
+        </a>
+        <div class="v-line"></div>
+        <a href="/src/page/admin/admin.html">
+          <p>Admin</p>
         </a>
 
         <div class="dropdown">
@@ -90,8 +93,7 @@
 
     <!-- MAIN -->
     <main>
-      <div id="register">
-        <div class="blurr">
+      <div>
           <h2>IF YOU SEE THIS, EVERYTHING HAS WORKED AND YOU ARE LOGGED IN</h2>
           <div>
             <p>
@@ -101,53 +103,6 @@
               dolorum quis consectetur. Recusandae, consequuntur. Libero.
             </p>
           </div>
-        </div>
-
-        <form class="register">
-          <div>
-            <h2>Gibb Mau dini Infos</h2>
-            <div class="textbox">
-              <input type="text" id="usernameInput" placeholder="Username" />
-            </div>
-            <div class="textbox">
-              <input type="email" id="emailInput" placeholder="E-Mail" />
-            </div>
-            <div class="textbox">
-              <input
-                type="password"
-                id="passwordInput"
-                placeholder="Password"
-              />
-            </div>
-            <div class="textbox">
-              <input
-                type="password"
-                id="passwordInput"
-                placeholder="Confirm password"
-              />
-            </div>
-            <input type="checkbox" name="agbs" id="agbs" />
-            <label>
-              By checking this box, you're selling your soul to me. <br />
-              (not optional)
-            </label>
-          </div>
-          <div>
-            <button onclick="registerUser();">Register</button>
-          </div>
-        </form>
-      </div>
-
-      <div id="account">
-        <h2>IF YOU SEE THIS, EVERYTHING HAS WORKED AND YOU ARE LOGGED IN</h2>
-        <div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt quasi
-            aperiam iste eligendi repellendus, odio, recusandae necessitatibus
-            obcaecati, rem nisi officiis aliquam non eum dolorum quis
-            consectetur. Recusandae, consequuntur. Libero.
-          </p>
-        </div>
       </div>
     </main>
   </body>
