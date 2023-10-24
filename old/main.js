@@ -1,85 +1,113 @@
-// LOGIN
-const loginUrl = '/auth/login';
-const signupUrl = '/auth/signup';
+// @ts-check
+/** @typedef {import('./types/node_modules/jose/dist/types')} jose_import */
+// @ts-ignore
+import * as jose_import from "https://esm.run/jose";
 
+/** @type {import('./types/node_modules/jose/dist/types')} */
+const jose = jose_import;
+
+// LOGIN
+const loginUrl = "http://localhost:3000/auth/login";
+const signupUrl = "/auth/signup";
+// @param username string
 // login-function
+/**
+ * @param {string} username
+ * @param {string} password
+ */
 function login(username, password) {
   // JSON-format
   const data = {
     username: username,
-    password: password
+    password: password,
   };
-
-  fetch(loginUrl, {
-    method: 'POST',
+  let result = fetch(loginUrl, {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(data)
+    body: JSON.stringify(data),
   })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`Statuscode HTTP-ERROR -> ${response.status}`);
+    .then((value) => {
+      if (value.status === 401 || value.status === 404) {
+        alert("Wrong Username or Password");
       }
-      // successful login
-      return response.json();
+
+      if (value.ok) {
+        value.json().then((access_token) => {});
+      }
     })
-    .then(userData => {
-      // use userdata after login
-      console.log('Successful lgoin:', userData);
-    })
-    .catch(error => {
-      console.error('Login ERROR ->', error);
+    .catch((err) => {
+      alert("error: " + err);
     });
 }
 
 // LOGIN-BUTTON
 function performLogin() {
-  const username = document.getElementById('loginUsername').value;
-  const password = document.getElementById('loginPassword').value;
-
-  login(username, password);
+  const username = document.getElementById("loginUsername");
+  const password = document.getElementById("loginPassword");
+  if (
+    username instanceof HTMLInputElement &&
+    password instanceof HTMLInputElement
+  ) {
+    login(username.value, password.value);
+  }
 }
 
 // SIGNUP
+/**
+ * @param {string} username
+ * @param {string} email
+ * @param {string} password
+ */
 function signup(username, email, password) {
   // JSON-format
   const data = {
     username: username,
-    email: email,
-    password: password
+    password: password,
   };
 
   fetch(signupUrl, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      accept: "application/json",
     },
-    body: JSON.stringify(data)
+
+    body: JSON.stringify(data),
   })
-    .then(response => {
+    .then((response) => {
       if (!response.ok) {
         throw new Error(`Statuscode HTTP-ERROR -> ${response.status}`);
       }
       // successful registration
       return response.json();
     })
-    .then(userData => {
+    .then((userData) => {
       // use data after registration
-      console.log('Successful registration:', userData);
+      console.log("Successful registration:", userData);
     })
-    .catch(error => {
-      console.error('Registration ERROR ->', error);
+    .catch((error) => {
+      console.error("Registration ERROR ->", error);
     });
 }
 
 // REGISTER-BUTTON
 function registerUser() {
-  const username = document.getElementById('usernameInput').value;
-  const email = document.getElementById('emailInput').value;
-  const password = document.getElementById('passwordInput').value;
+  const username = document.getElementById("usernameInput");
+  const email = document.getElementById("emailInput");
+  const password = document.getElementById("passwordInput");
+  const confirmPassword = document.getElementById("confirmPassword");
 
-  signup(username, email, password);
+  if (
+    username instanceof HTMLInputElement &&
+    email instanceof HTMLInputElement && // evtl. mail entfernen
+    password instanceof HTMLInputElement &&
+    password == confirmPassword
+  ) {
+    signup(username.value, email.value, password.value);
+  } else if (password != confirmPassword) {
+    console.log("wrong Password");
+  }
 }
 
 // POPUPS
@@ -106,14 +134,5 @@ function handleSettings(option) {
       break;
     default:
       console.log("Ungültige Option");
-  }
-}
-
-// ACCOUNT-PAGE
-function accountPage() {
-  if (!login) {
-    document.getElementById('register').style.display = 'none';
-  } else {
-    document.getElementById('register').style.display = 'block';
   }
 }

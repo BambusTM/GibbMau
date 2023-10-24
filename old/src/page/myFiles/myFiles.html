@@ -1,116 +1,110 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-US">
+  <!-- HEAD -->
 
-<!-- HEAD -->
+  <head>
+    <title>GM-My Files</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/src/menubar/menubar.css" />
+    <link rel="stylesheet" href="/src/menubar/popups.css" />
+    <link rel="stylesheet" href="/src/footer.css" />
+    <link rel="stylesheet" href="/src/page/myFiles/myFiles.css" />
 
-<head>
-  <title>GM-My Files</title>
-  <link rel="stylesheet" href="/style.css" />
-  <link rel="stylesheet" href="/src/menubar/menubar.css" />
-  <link rel="stylesheet" href="/src/menubar/popups.css" />
-  <link rel="stylesheet" href="/src/footer.css" />
-  <link rel="stylesheet" href="/src/page/myFiles/myFiles.css" />
+    <script src="/main.js" type="module"></script>
+  </head>
 
-  <script src="/main.js"></script>
-</head>
-
-<body>
-  <!-- MENUBAR -->
-  <header>
-    <div class="menubar">
-      <a href="/index.html">
-        <img class="logo" src="/rsc/logo.png" alt="404">
-        <p class="txt">Home</p>
-      </a>
-      <div class="v-line">
-      </div>
-      <a class="active" href="/src/page/myFiles/myFiles.html">
-        <p>My Files</p>
-      </a>
-      <div class="v-line">
-      </div>
-      <a href="/src/page/favorites/favorites.html">
-        <p>Favorites</p>
-      </a>
-
-      <div class="dropdown">
-        <a href="/src/page/account/account.html">
-          <p>Account</p>
-          <img class="logo" src="/rsc/acc.png" alt="404">
+  <body>
+    <!-- MENUBAR -->
+    <header>
+      <div class="menubar">
+        <a href="/index.html">
+          <img class="logo" src="/rsc/logo.png" alt="404" />
+          <p class="txt">Home</p>
         </a>
-        <div class="dropdown-content">
-          <button onclick="togglePopup('profilePopup')">Profile</button>
-          <button onclick="togglePopup('aboutPopup')">About</button>
-          <button onclick="togglePopup('settingsPopup')">Settings</button>
-          <button onclick="togglePopup()">Log out</button>
-        </div>
-      </div>
-    </div>
+        <div class="v-line"></div>
+        <a class="active" href="/src/page/myFiles/myFiles.html">
+          <p>My Files</p>
+        </a>
+        <div class="v-line"></div>
+        <a href="/src/page/favorites/favorites.html">
+          <p>Favorites</p>
+        </a>
 
-    <!-- PROFIL-POPUP -->
-    <span id="profilePopup" class="popup">
-      <form>
-        <div>
-          <h1>Hello BeReal</h1>
-          <button>close</button>
-        </div>
-      </form>
-    </span>
-
-    <!-- ABOUT-POPUP -->
-    <span id="aboutPopup" class="popup">
-      <form>
-        <div>
-          <h1>Gibb Mau</h1>
-          <h3>Version: 0.0</h3>
-          <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa
-            qui officia deserunt mollit anim id est laborum."</p>
-          <button>close</button>
-        </div>
-      </form>
-    </span>
-
-    <!-- SETTINGS-POPUP -->
-    <span id="settingsPopup" class="popup">
-      <form>
-        <div>
-          <h1>Settings</h1>
-          <button>Close</button>
-          <div>
-            <label for="option">Select an option:</label>
-            <select id="option" onchange="handleSettings(this.value)">
-              <option value="option1">Option 1</option>
-              <option value="option2">Option 2</option>
-            </select>
+        <div class="dropdown">
+          <a href="/src/page/account/account.html">
+            <p>Account</p>
+            <img class="logo" src="/rsc/acc.png" alt="404" />
+          </a>
+          <div class="dropdown-content">
+            <button onclick="togglePopup('profilePopup')">Profile</button>
+            <button onclick="togglePopup('aboutPopup')">About</button>
+            <button onclick="togglePopup('settingsPopup')">Settings</button>
+            <button onclick="togglePopup()">Log out</button>
           </div>
         </div>
-      </form>
-    </span>
+      </div>
 
+      <!-- PROFIL-POPUP -->
+      <span id="profilePopup" class="popup">
+        <form>
+          <div>
+            <h1>Hello BeReal</h1>
+            <button>close</button>
+          </div>
+        </form>
+      </span>
 
-  </header>
+      <!-- ABOUT-POPUP -->
+      <span id="aboutPopup" class="popup">
+        <form>
+          <div>
+            <h1>Gibb Mau</h1>
+            <h3>Version: 0.0</h3>
+            <p>
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum."
+            </p>
+            <button>close</button>
+          </div>
+        </form>
+      </span>
 
-  <!-- MAINPAGE -->
-  <main>
-    <div>
-      <h1>My Files</h1>
-    </div>
-  </main>
+      <!-- SETTINGS-POPUP -->
+      <span id="settingsPopup" class="popup">
+        <form>
+          <div>
+            <h1>Settings</h1>
+            <button>Close</button>
+            <div>
+              <label for="option">Select an option:</label>
+              <select id="option" onchange="handleSettings(this.value)">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </span>
+    </header>
 
-  <!-- FOOTER -->
-  <footer>
-    <ul>
-      <a href="#">Contact</a>
-    </ul>
-    <p>©Copyright 2023 by my MOM. All rights reversed.</p>
-  </footer>
+    <!-- MAINPAGE -->
+    <main>
+      <div>
+        <h1>My Files</h1>
+      </div>
+    </main>
 
-</body>
-
+    <!-- FOOTER -->
+    <footer>
+      <ul>
+        <a href="#">Contact</a>
+      </ul>
+      <p>©Copyright 2023 by my MOM. All rights reversed.</p>
+    </footer>
+  </body>
 </html>

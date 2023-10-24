@@ -2,6 +2,7 @@
 .menubar {
   display: flex;
   position: fixed;
+  flex-wrap: nowrap;
   top: 0;
   left: 0;
   width: 100%;
@@ -13,13 +14,14 @@
 
 .menubar a {
   float: left;
+  flex-wrap: nowrap;
   color: rgb(255, 255, 255);
   text-align: left;
   padding: 1em;
 }
 
 .menubar img {
-  margin-top: .75em;
+  margin-top: 0.75em;
   height: 3em;
   float: left;
 }
@@ -44,7 +46,6 @@
 
 .menubar a.active {
   color: #3498db;
-  ;
 }
 
 .menu_right {
@@ -81,7 +82,7 @@
   max-width: 10em;
 }
 
-.dropdown-content a {
+.dropdown-content button {
   color: #ffffff;
   text-decoration: none;
   display: block;
@@ -106,4 +107,3 @@
   color: #3498db;
   cursor: pointer;
 }
-
