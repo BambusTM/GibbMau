@@ -1,0 +1,10 @@
+main {
+    display: flexbox;
+    margin: auto;
+    margin-top: 5em;
+    width: 95%;
+    min-height: 40em;
+    padding-bottom: 5em;
+    background-color: #000000;
+    border: .25em solid #000000;
+}

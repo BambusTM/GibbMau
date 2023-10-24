@@ -1,0 +1,43 @@
+.box {
+    margin: auto;
+    margin-top: 5em;
+    width: 95%;
+    padding-bottom: 5em;
+    background-color: #00000045;
+    border: .25em solid #000000;
+}
+
+.box h1 {
+    color: #ffffff; 
+    margin-left: 1em;
+    text-align: left;
+    font-size: 3em; 
+    font-weight: bold; 
+    text-shadow: 2px 2px 0 #000, 
+}
+
+/* RECENTLY USED */
+
+.ru {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.ru button {
+    position: static;
+    border: 1px solid red;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 3px;
+    background: none;
+    width: auto;
+}
+
+.ru button:hover {
+cursor: pointer; 
+}
+
+.ru img {
+    width: 12em;
+}
