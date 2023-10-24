@@ -2,11 +2,6 @@
 
 ## Setup
 
-```bash
-cd types
-npm install
-```
-
 ## Colors
 
 **Color consistancy:**
