@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
   <meta charset="UTF-8" />
+  <title>Admin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/style.css" />
   <link rel="stylesheet" href="/src/menubar/menubar.css" />
   <link rel="stylesheet" href="/src/menubar/popups.css" />
   <link rel="stylesheet" href="/src/page/admin/admin.css">
-  <title>Admin</title>
-
-  <script src="/main.js" type="module"></script>
+  <script src="/main.js"></script>
 </head>
 
 <body>
@@ -42,16 +41,14 @@
           <button onclick="togglePopup('profilePopup')">Profile</button>
           <button onclick="togglePopup('aboutPopup')">About</button>
           <button onclick="togglePopup('settingsPopup')">Settings</button>
-          <button onclick="togglePopup('loginPopup')">Log in</button>
         </div>
       </div>
     </div>
 
     <!-- PROFIL-POPUP -->
     <span id="profilePopup" class="popup">
-      <form>
+      <form class="profile">
         <div>
-          <h1>Hello BeReal</h1>
           <button>close</button>
         </div>
       </form>
@@ -77,7 +74,7 @@
 
     <!-- SETTINGS-POPUP -->
     <span id="settingsPopup" class="popup">
-      <form>
+      <form class="settings">
         <div>
           <h1>Settings</h1>
           <button>Close</button>
@@ -91,29 +88,8 @@
         </div>
       </form>
     </span>
-
-    <!-- LOGIN-POPUP -->
-    <span id="loginPopup" class="popup">
-      <form class="login">
-        <div>
-          <h2>Log In</h2>
-          <div class="textbox">
-            <input type="text" id="loginUsername" placeholder="Username" />
-          </div>
-          <div class="textbox">
-            <input type="password" id="loginPassword" placeholder="Password" />
-          </div>
-        </div>
-        <div>
-          <button onclick="performLogin();" type="button">Log in</button>
-          <p>
-            Alternatively, you can<a href="/src/page/account/account.html">
-              Sign up</a>.
-          </p>
-        </div>
-      </form>
-    </span>
   </header>
+
   <main>
     <form class="register">
       <div>
@@ -137,7 +113,7 @@
         </label>
       </div>
       <div>
-        <button onclick="registerUser();">Register</button>
+        <button onclick="registerUser();">Register</button> <!-- need to linkt this mf -->
       </div>
     </form>
   </main>
