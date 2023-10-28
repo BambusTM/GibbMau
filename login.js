@@ -36,9 +36,7 @@ function login(username, password) {
       if (value.ok) {
         value.json().then((access_token) => {
           let date = jose.decodeJwt(access_token);
-          
           document.cookie = `access_token=${access_token}; expires=${date.exp}`
-
         });
       }
     })
