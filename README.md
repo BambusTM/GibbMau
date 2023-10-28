@@ -28,5 +28,3 @@ Popup-Background: rgba(0, 0, 0, 0.897)
 Popup-Border: rgb(0, 52, 131)
 
 _Scrollbar:_
-
-.
