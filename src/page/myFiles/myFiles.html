@@ -45,6 +45,10 @@
     <span id="profilePopup" class="popup">
       <form class="profile">
         <div>
+          <div>
+            <h3>You are logged in as: </h3>
+            <h3>test</h3>
+          </div>
           <button>close</button>
         </div>
       </form>
@@ -77,6 +81,27 @@
           <h1>Settings</h1>
           <h2>nothing to see here yet</h2>
           <button>Close</button>
+        </div>
+      </form>
+    </span>
+
+    <!-- LOGIN-POPUP -->
+    <span id="loginPopup" class="popup">
+      <form class="login">
+        <div>
+          <h2>Log In</h2>
+          <div class="textbox">
+            <input type="text" id="loginUsername" placeholder="Username" />
+          </div>
+          <div class="textbox">
+            <input type="password" id="loginPassword" placeholder="Password" />
+          </div>
+        </div>
+        <div>
+          <button onclick="performLogin();" type="button">Log in</button>
+          <p>
+            *Accounts have to be created by an administrator
+          </p>
         </div>
       </form>
     </span>

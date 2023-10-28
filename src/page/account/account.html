@@ -1,106 +1,112 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <!-- HEAD -->
+<!-- HEAD -->
 
-  <head>
-    <title>GM-Account</title>
-    <link rel="stylesheet" href="/style.css" />
-    <link rel="stylesheet" href="/src/menubar/menubar.css" />
-    <link rel="stylesheet" href="/src/menubar/popups.css" />
-    <link rel="stylesheet" href="/src/page/account/account.css" />
-    <script src="/login.js"></script>
-    <script src="/main.js"></script>
-  </head>
+<head>
+  <title>GM-Account</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/src/menubar/menubar.css" />
+  <link rel="stylesheet" href="/src/menubar/popups.css" />
+  <link rel="stylesheet" href="/src/page/account/account.css" />
+  <script src="/login.js"></script>
+  <script src="/main.js"></script>
+</head>
 
-  <body>
-    <!-- MENUBAR -->
-    <header>
-      <div class="menubar">
-        <a href="/index.html">
-          <img class="logo" src="/rsc/logo.png" alt="404" />
-          <p class="txt">Home</p>
-        </a>
-        <div class="v-line"></div>
-        <a href="/src/page/myFiles/myFiles.html">
-          <p>My Files</p>
-        </a>
-        <div class="v-line"></div>
-        <a href="/src/page/favorites/favorites.html">
-          <p>Favorites</p>
-        </a>
+<body>
+  <!-- MENUBAR -->
+  <header>
+    <div class="menubar">
+      <a href="/index.html">
+        <img class="logo" src="/rsc/logo.png" alt="404" />
+        <p class="txt">Home</p>
+      </a>
+      <div class="v-line"></div>
+      <a href="/src/page/myFiles/myFiles.html">
+        <p>My Files</p>
+      </a>
+      <div class="v-line"></div>
+      <a href="/src/page/favorites/favorites.html">
+        <p>Favorites</p>
+      </a>
 
-        <div class="dropdown">
-          <a class="active" href="/src/page/account/account.html">
-            <p>Account</p>
-            <img class="logo" src="/rsc/acc.png" alt="404" />
-          </a>
-          <div class="dropdown-content">
-            <button onclick="togglePopup('profilePopup')">Profile</button>
-            <button onclick="togglePopup('aboutPopup')">About</button>
-            <button onclick="togglePopup('settingsPopup')">Settings</button>
-          </div>
+      <div class="dropdown">
+        <a class="active" href="/src/page/account/account.html">
+          <p>Account</p>
+          <img class="logo" src="/rsc/acc.png" alt="404" />
+        </a>
+        <div class="dropdown-content">
+          <button onclick="togglePopup('aboutPopup')">About</button>
+          <button onclick="togglePopup('settingsPopup')">Settings</button>
+          <button onclick="togglePopup('loginPopup')">Log in</button>
         </div>
       </div>
+    </div>
 
-      <!-- PROFIL-POPUP -->
-      <span id="profilePopup" class="popup">
-        <form>
-          <div>
-            <h1>Hello BeReal</h1>
-            <button>close</button>
-          </div>
-        </form>
-      </span>
+    <!-- ABOUT-POPUP -->
+    <span id="aboutPopup" class="popup">
+      <form class="about">
+        <div>
+          <h1>Gibb Mau</h1>
+          <h3>Version: 0.0 (undeployed)</h3>
+          <p>
+            Gibb Mau is a file sharing project, created by students of the
+            IT-vocational school in Switzerland, Bern.
+            <br />
+            The servers are privately hosted and there is no guarantee for
+            theire availability. <br />
+          </p>
+          <button>close</button>
+        </div>
+      </form>
+    </span>
 
-      <!-- ABOUT-POPUP -->
-      <span id="aboutPopup" class="popup">
-        <form class="about">
-          <div>
-            <h1>Gibb Mau</h1>
-            <h3>Version: 0.0 (undeployed)</h3>
-            <p>
-              Gibb Mau is a file sharing project, created by students of the
-              IT-vocational school in Switzerland, Bern.
-              <br />
-              The servers are privately hosted and there is no guarantee for
-              theire availability. <br />
-            </p>
-            <button>close</button>
-          </div>
-        </form>
-      </span>
+    <!-- SETTINGS-POPUP -->
+    <span id="settingsPopup" class="popup">
+      <form class="settings">
+        <div>
+          <h1>Settings</h1>
+          <h2>nothing to see here yet</h2>
+          <button>Close</button>
+        </div>
+      </form>
+    </span>
 
-      <!-- SETTINGS-POPUP -->
-      <span id="settingsPopup" class="popup">
-        <form>
-          <div>
-            <h1>Settings</h1>
-            <button>Close</button>
-            <div>
-              <label for="option">Select an option:</label>
-              <select id="option" onchange="handleSettings(this.value)">
-                <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
-              </select>
-            </div>
+    <!-- LOGIN-POPUP -->
+    <span id="loginPopup" class="popup">
+      <form class="login">
+        <div>
+          <h2>Log In</h2>
+          <div class="textbox">
+            <input type="text" id="loginUsername" placeholder="Username" />
           </div>
-        </form>
-      </span>
-    </header>
+          <div class="textbox">
+            <input type="password" id="loginPassword" placeholder="Password" />
+          </div>
+        </div>
+        <div>
+          <button onclick="performLogin();" type="button">Log in</button>
+          <p>
+            *Accounts have to be created by an administrator
+          </p>
+        </div>
+      </form>
+    </span>
+  </header>
 
-    <!-- MAIN -->
-    <main>
-      <div class="box">
-          <h2>IF YOU SEE THIS, EVERYTHING HAS WORKED AND YOU ARE LOGGED IN</h2>
-          <div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-              quasi aperiam iste eligendi repellendus, odio, recusandae
-              necessitatibus obcaecati, rem nisi officiis aliquam non eum
-              dolorum quis consectetur. Recusandae, consequuntur. Libero.
-            </p>
-          </div>
+  <!-- MAIN -->
+  <main>
+    <div class="box">
+      <h2>IF YOU SEE THIS, EVERYTHING HAS WORKED AND YOU ARE LOGGED IN</h2>
+      <div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+          quasi aperiam iste eligendi repellendus, odio, recusandae
+          necessitatibus obcaecati, rem nisi officiis aliquam non eum
+          dolorum quis consectetur. Recusandae, consequuntur. Libero.
+        </p>
       </div>
-    </main>
-  </body>
+    </div>
+  </main>
+</body>
+
 </html>
