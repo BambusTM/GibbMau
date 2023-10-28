@@ -24,10 +24,6 @@
       <a href="/src/page/myFiles/myFiles.html">
         <p>My Files</p>
       </a>
-      <div class="v-line"></div>
-      <a href="/src/page/favorites/favorites.html">
-        <p>Favorites</p>
-      </a>
 
       <div class="dropdown">
         <a class="active" href="/src/page/account/account.html">
@@ -75,6 +71,9 @@
     <span id="loginPopup" class="popup">
       <form class="login">
         <div>
+          <div class="pHeader">
+            <button id="x">x</button>
+          </div>
           <h2>Log In</h2>
           <div class="textbox">
             <input type="text" id="loginUsername" placeholder="Username" />
@@ -84,7 +83,7 @@
           </div>
         </div>
         <div>
-          <button onclick="performLogin();" type="button">Log in</button>
+          <button class="loginBtn" onclick="performLogin();" type="button">Log in</button>
           <p>
             *Accounts have to be created by an administrator
           </p>

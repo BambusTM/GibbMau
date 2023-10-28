@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="/style.css" />
   <link rel="stylesheet" href="/src/menubar/menubar.css" />
   <link rel="stylesheet" href="/src/menubar/popups.css" />
-  <link rel="stylesheet" href="/src/footer.css" />
   <link rel="stylesheet" href="/src/page/myFiles/myFiles.css" />
+  <link rel="stylesheet" href="/src/footer.css" />
   <script src="/login.js"></script>
   <script src="/main.js"></script>
 </head>
@@ -89,6 +89,9 @@
     <span id="loginPopup" class="popup">
       <form class="login">
         <div>
+          <div class="pHeader">
+            <button id="x">x</button>
+          </div>
           <h2>Log In</h2>
           <div class="textbox">
             <input type="text" id="loginUsername" placeholder="Username" />
@@ -98,7 +101,7 @@
           </div>
         </div>
         <div>
-          <button onclick="performLogin();" type="button">Log in</button>
+          <button class="loginBtn" onclick="performLogin();" type="button">Log in</button>
           <p>
             *Accounts have to be created by an administrator
           </p>
@@ -112,6 +115,10 @@
     <div class="box">
       <h2>MY FILES</h2>
       <h3>Nothing here yet</h3>
+      <div class="flex">
+        <button class="uploadButton">
+          UPLOAD
+        </button>
     </div>
   </main>
 

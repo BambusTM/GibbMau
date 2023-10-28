@@ -1,5 +1,22 @@
-/* RECENTLY USED */
+/* HEADER DIV */
+.flex {
+    display: flex;
+    justify-content: center;
+}
 
+.flex button {
+    padding: 1em 2em;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* RECENTLY USED */
 .filesBig {
     display: flex;
     justify-content: center;

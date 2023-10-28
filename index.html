@@ -87,6 +87,9 @@
     <span id="loginPopup" class="popup">
       <form class="login">
         <div>
+          <div class="pHeader">
+            <button id="x">x</button>
+          </div>
           <h2>Log In</h2>
           <div class="textbox">
             <input type="text" id="loginUsername" placeholder="Username" />
@@ -96,7 +99,7 @@
           </div>
         </div>
         <div>
-          <button onclick="performLogin();" type="button">Log in</button>
+          <button class="loginBtn" onclick="performLogin();" type="button">Log in</button>
           <p>
             *Accounts have to be created by an administrator
           </p>
@@ -119,21 +122,20 @@
           consequatur?
         </p>
       </div>
-      <div>
-        <div class="buttons">
-          <button>
-            upload
+      <div class="flex">
+          <button class="uploadButton">
+            UPLOAD
           </button>
-        </div>
       </div>
     </div>
 
     <div class="box">
       <h2>REVENTLY USED FILES</h2>
       <div class="filesBig">
-        <div>
+        <div class="bigFileDiv">
+          <img src="/rsc/folder_small.png" alt="404" /><br>
+
           <button>
-            <img src="/rsc/folder_small.png" alt="404" /><br>
             <label for="">file_name</label>
           </button>
         </div>
