@@ -1,14 +1,30 @@
 // @ts-check
-/** @typedef {import('./types/node_modules/jose/dist/types')} jose_import */
-// @ts-ignore
-import * as jose_import from "https://esm.run/jose";
-
-/** @type {import('./types/node_modules/jose/dist/types')} */
-const jose = jose_import;
 
 // LOGIN
 const loginUrl = "http://localhost:3000/auth/login";
-const signupUrl = "/auth/signup";
+const signupUrl = "http://localhost:3000/auth/signup";
+
+/**
+ * 
+ * @param {string} token 
+ * @returns the parsed token
+ */
+function parseJwt (token) {
+  var base64Url = token.split('.')[1];
+  var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+  }).join(''));
+
+  return JSON.parse(jsonPayload);
+}
+
+function extractAccessTokenHeader() {
+  let cookie = document.cookie;
+  let accessToken = cookie.split(";")[0].split("=")[1];
+  return accessToken;
+}
+
 // @param username string
 // login-function
 /**
@@ -34,9 +50,10 @@ function login(username, password) {
       }
 
       if (value.ok) {
-        value.json().then((access_token) => {
-          let date = jose.decodeJwt(access_token);
-          document.cookie = `access_token=${access_token}; expires=${date.exp}`
+        value.json().then(( /** @type {{access_token: string}} */body) => {
+          let date = parseJwt(body.access_token);
+          alert(JSON.stringify(date));
+          document.cookie = `access_token=${body.access_token}; expires=${date.exp}`
         });
       }
     })
@@ -70,13 +87,18 @@ function signup(username, email, password) {
     password: password,
   };
 
+  console.log(JSON.stringify(data))
+
+  console.log(extractAccessTokenHeader())
+
+
+  const stringData = JSON.stringify(data);
+
   fetch(signupUrl, {
     method: "POST",
-    headers: {
-      accept: "application/json",
-    },
-
-    body: JSON.stringify(data),
+    headers: {accept: "application/json", 'Content-Type': "application/json", "Authorization": "Bearer " + extractAccessTokenHeader()},
+  
+    body: stringData,
   })
     .then((response) => {
       if (!response.ok) {
@@ -105,10 +127,14 @@ function registerUser() {
     username instanceof HTMLInputElement &&
     email instanceof HTMLInputElement && // evtl. mail entfernen
     password instanceof HTMLInputElement &&
-    password == confirmPassword
+    confirmPassword instanceof HTMLInputElement &&
+    password.value == confirmPassword.value
   ) {
     signup(username.value, email.value, password.value);
-  } else if (password != confirmPassword) {
-    console.log("wrong Password");
+    console.log(`${username?.value}, ${password?.value}, ${confirmPassword?.value}`)
+
+  } else {
+    console.log(`${username?.className}, ${email?.className}, ${username?.className}`)
+    console.log("wrong Password or error");
   }
 }
