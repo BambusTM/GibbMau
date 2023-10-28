@@ -21,7 +21,7 @@ function login(username, password) {
     username: username,
     password: password,
   };
-  let result = fetch(loginUrl, {
+  fetch(loginUrl, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
