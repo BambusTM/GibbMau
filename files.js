@@ -137,7 +137,7 @@ fetch(getHost('storage/list'),
             };
 
             const deleteImage = document.createElement('img');
-            deleteImage.src = 'rsc/delete.png';
+            deleteImage.src = '/rsc/delete.png';
             deleteImage.alt = '404';
             deleteButton.appendChild(deleteImage);
 
@@ -148,7 +148,7 @@ fetch(getHost('storage/list'),
             };
 
             const downloadImage = document.createElement('img');
-            downloadImage.src = 'rsc/cloud-computing.png';
+            downloadImage.src = '/rsc/cloud-computing.png';
             downloadImage.alt = '404';
             downloadButton.appendChild(downloadImage);
 
@@ -159,7 +159,7 @@ fetch(getHost('storage/list'),
             };
 
             const shareImage = document.createElement('img');
-            shareImage.src = 'rsc/share_icon.png';
+            shareImage.src = '/rsc/share_icon.png';
             shareImage.alt = '404';
             shareButton.appendChild(shareImage);
 
