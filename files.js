@@ -103,9 +103,13 @@ fetch(getHost('storage/list'),
     .then(response => response.json())
     .then(files => {
 
+
         const fileList = document.getElementById('fileList');
 
-        files.files.forEach((file, index) => {
+        files.files.forEach((/** @type {string} */ file, index) => {
+            var file = file.replace('.cloud/users/', '');
+            var file = file.slice(file.indexOf('/') + 1, file.length);
+
             const bigFileContainer = document.createElement('div');
             bigFileContainer.className = 'bigFileContainer';
 
@@ -128,6 +132,7 @@ fetch(getHost('storage/list'),
             const deleteButton = document.createElement('button');
             deleteButton.title = 'delete file';
             deleteButton.onclick = function () {
+                console.log(file);
                 deleteFile(file);
             };
 
