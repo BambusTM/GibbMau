@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 headers:{
                     Authorization: "Bearer " + extractAccessTokenHeader(),
                     accept:"application/json", 
-                    "Content-Type": "application/json"
                 }
             })
             .then(response => {
