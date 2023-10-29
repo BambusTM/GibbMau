@@ -72,7 +72,6 @@ function deleteFile(fileName) {
             Authorization: "Bearer " + extractAccessTokenHeader(),
             accept: "application/json",
             "Content-Type": "application/json"
-
         },
         body: JSON.stringify({ files: [fileName] })
     })
@@ -92,28 +91,34 @@ function deleteFile(fileName) {
 }
 
 // GET FILES FROM DATABASE AND CREATE FILE DIV
-fetch('/storage/list')
+fetch(getHost('storage/list'),
+    {
+        method: 'GET',
+        headers: {
+            Authorization: "Bearer " + extractAccessTokenHeader(),
+            accept: "application/json",
+        },
+    }
+)
     .then(response => response.json())
     .then(files => {
 
-        // Referenz zur Liste
         const fileList = document.getElementById('fileList');
 
-        files.forEach((file, index) => {
-            // Erstellen Sie ein Container-Div für jede Datei
+        files.files.forEach((file, index) => {
             const fileContainer = document.createElement('div');
-            fileContainer.className = 'bigFileContainer';
+            fileContainer.classList.add('bigFileContainer');
 
-            // Erstellen Sie ein Bild für die Datei (hier als Platzhalter)
+            const bigFileContainer = document.createElement('div');
+            bigFileContainer.classList.add('bigFileDiv');
+
             const fileImage = document.createElement('img');
             fileImage.src = "/rsc/folder_small.png";
             fileImage.alt = "404";
 
-            // Erstellen Sie ein Div für die Dateiaktionen (Löschen, Herunterladen, Teilen)
             const actionDiv = document.createElement('div');
-            actionDiv.className = 'bigFileBtnDiv';
+            actionDiv.classList.add('bigFileBtnDiv');
 
-            // Erstellen Sie die Buttons für Aktionen
             const deleteButton = document.createElement('button');
             deleteButton.title = 'delete file';
             deleteButton.innerHTML = '<img src="rsc/delete.png" alt="404">';
@@ -129,23 +134,20 @@ fetch('/storage/list')
             shareButton.innerHTML = '<img src="rsc/share_icon.png" alt="404">';
             shareButton.addEventListener('click', () => togglePopup('sharePopup'));
 
-            // Erstellen Sie ein Label für den Dateinamen
             const nameLabel = document.createElement('label');
             nameLabel.htmlFor = `file${index + 1}`;
-            nameLabel.textContent = file.name;
+            nameLabel.textContent = file;
 
-            // Fügen Sie die erstellten Elemente zur Container-Div hinzu
             fileContainer.appendChild(fileImage);
             fileContainer.appendChild(actionDiv);
             actionDiv.appendChild(deleteButton);
             actionDiv.appendChild(downloadButton);
             actionDiv.appendChild(shareButton);
-            fileContainer.appendChild(nameLabel);
+            bigFileContainer.appendChild(nameLabel);
 
-            // Fügen Sie die Container-Div zur Liste hinzu
             fileList.appendChild(fileContainer);
         });
     })
     .catch(error => {
-        console.error('Fehler beim Abrufen der Dateien: ' + error);
+        console.error('Failed to load files: ' + error);
     });
