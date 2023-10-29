@@ -43,7 +43,6 @@ fetch(isAdminUrl, {
 
           menubar.appendChild(link);
           menubar.appendChild(dropdown);
-
         }
       }
     })

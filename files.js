@@ -17,9 +17,14 @@ document.addEventListener("DOMContentLoaded", function() {
             formData.append('file', file);
 
             // using fetch API to send file(s) to the server
-            fetch('/api/storage/upload', {
+            fetch('http://localhost:3000/storage/upload', {
                 method: 'POST',
-                body: formData
+                body: formData,
+                headers:{
+                    Authorization: "Bearer " + extractAccessTokenHeader(),
+                    accept:"application/json", 
+                    "Content-Type": "application/json"
+                }
             })
             .then(response => {
                 if (response.ok) {
