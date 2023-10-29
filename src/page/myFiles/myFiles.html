@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="/src/page/myFiles/myFiles.css" />
   <link rel="stylesheet" href="/src/footer.css" />
   <script src="/login.js"></script>
+  <script src="/files.js"></script>
   <script src="/main.js"></script>
 </head>
 
@@ -113,12 +114,21 @@
   <!-- MAINPAGE -->
   <main>
     <div class="box">
-      <h2>MY FILES</h2>
-      <h3>Nothing here yet. Get started by uploading files: </h3>
-      <div class="flex">
-        <button title="upload file" class="uploadButton">
-          UPLOAD
+      <div class="boxHead">
+        <h2>My Files</h2>
+        <button id="openFileExplorer" style="cursor: pointer;">
+          <div>
+            <div>
+              <p>UPLOAD FILES</p>
+            </div>
+            <div>
+              <img src="/rsc/upload.png" alt="">
+            </div>
+          </div>
         </button>
+        <input type="file" id="fileInput" style="display: none;">
+      </div>
+      <hr>
     </div>
   </main>
 
