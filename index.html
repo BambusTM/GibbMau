@@ -122,25 +122,33 @@
           consequatur?
         </p>
       </div>
-      <div class="flex">
-        <button class="uploadButton">
-          UPLOAD
-        </button>
-      </div>
     </div>
 
     <div class="box">
-      <h2>RECENTLY USED FILES</h2>
+      <div class="boxHead">
+        <h2>RECENTLY USED FILES</h2>
+        <button title="upload file">
+          <div>
+            <div>
+              <p>UPLOAD FILES</p>
+            </div>
+            <div>
+              <img src="/rsc/upload.png" alt="">
+            </div>
+          </div>
+        </button>
+      </div>
       <hr>
       <div class="filesBig">
-
-        <div class="bigFileContainer">
+        <div class="bigFileContainer" onclick="">
           <div class="bigFileDiv">
-            <img src="/rsc/folder_small.png" alt="404" /><br>
+            <div onclick="openFile()">
+              <img src="/rsc/folder_small.png" alt="404" /><br>
+            </div>
             <div class="bigFileBtnDiv">
               <button title="delete file" onclick="trash()"><img src="rsc/delete.png" alt="404"></button>
               <button title="download file" onclick="download()"><img src="rsc/cloud-computing.png" alt="404"></button>
-              <button title="share file" onclick="share()"><img src="rsc/share_icon.png" alt="404"></button>
+              <button title="share file" onclick="togglePopup('share_file')"><img src="rsc/share_icon.png" alt="404"></button>
             </div>
           </div>
           <div class="nameDiv">
@@ -154,7 +162,7 @@
             <div class="bigFileBtnDiv">
               <button title="delete file" onclick="trash()"><img src="rsc/delete.png" alt="404"></button>
               <button title="download file" onclick="download()"><img src="rsc/cloud-computing.png" alt="404"></button>
-              <button title="share file" onclick="share()"><img src="rsc/share_icon.png" alt="404"></button>
+              <button title="share file" onclick="togglePopup('share_file')"><img src="rsc/share_icon.png" alt="404"></button>
             </div>
           </div>
           <div class="nameDiv">
@@ -168,7 +176,7 @@
             <div class="bigFileBtnDiv">
               <button title="delete file" onclick="trash()"><img src="rsc/delete.png" alt="404"></button>
               <button title="download file" onclick="download()"><img src="rsc/cloud-computing.png" alt="404"></button>
-              <button title="share file" onclick="share()"><img src="rsc/share_icon.png" alt="404"></button>
+              <button title="share file" onclick="togglePopup('share_file')"><img src="rsc/share_icon.png" alt="404"></button>
             </div>
           </div>
           <div class="nameDiv">
@@ -182,7 +190,7 @@
             <div class="bigFileBtnDiv">
               <button title="delete file" onclick="trash()"><img src="rsc/delete.png" alt="404"></button>
               <button title="download file" onclick="download()"><img src="rsc/cloud-computing.png" alt="404"></button>
-              <button title="share file" onclick="share()"><img src="rsc/share_icon.png" alt="404"></button>
+              <button title="share file" onclick="togglePopup('share_file')"><img src="rsc/share_icon.png" alt="404"></button>
             </div>
           </div>
           <div class="nameDiv">

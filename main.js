@@ -11,11 +11,11 @@ function togglePopup(popupId) {
         otherPopup.classList.remove("show");
       }
     });
-
     popup.classList.toggle("show");
   }
 }
 
+// ADMIN PAGE
 fetch(isAdminUrl, {
   method: "GET",
   headers: {

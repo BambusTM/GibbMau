@@ -35,6 +35,16 @@
     flex-direction: row;
 }
 
+.bigFileDiv:hover {
+    cursor: pointer;
+}
+
+.bigFileDiv a {
+    display: block;
+    height: 100%;
+    background-color: red;
+}
+
 .bigFileDiv img {
     width: 10em;
 }
@@ -62,6 +72,7 @@
 
 .bigFileBtnDiv button:hover {
     border: none;
+    cursor: pointer;
 }
 
 .bigFileBtnDiv img:hover {
