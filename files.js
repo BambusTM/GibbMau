@@ -58,7 +58,11 @@ function deleteFile(fileName) {
     fetch(getHost('storage/delete'), {
         method: 'DELETE',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            Authorization: "Bearer " + extractAccessTokenHeader(),
+            accept:"application/json", 
+            "Content-Type": "application/json"
+
         },
         body: JSON.stringify({ fileName: fileName })
     })
