@@ -21,7 +21,6 @@ function closePopup(popupId, event) {
   popup.classList.toggle("show");
 }
 
-
 // ADMIN PAGE
 fetch(isAdminUrl, {
   method: "GET",
@@ -30,7 +29,7 @@ fetch(isAdminUrl, {
     Authorization: "Bearer " + extractAccessTokenHeader(),
   },
 }).then(res => {
-  if(res.ok) {
+  if (res.ok) {
     res.json().then((/** @type {{isAdmin: boolean}} */ value) => {
       if (value.isAdmin) {
         const menubars = document.getElementsByClassName("menubar");
@@ -43,7 +42,7 @@ fetch(isAdminUrl, {
 
           const link = document.createElement('a');
           link.href = "/src/page/admin/admin.html";
-          if(location.pathname == "/src/page/admin/admin.html") link.classList.add("active");
+          if (location.pathname == "/src/page/admin/admin.html") link.classList.add("active");
           const p = document.createElement('p');
           p.textContent = "Admin";
           link.appendChild(p);
