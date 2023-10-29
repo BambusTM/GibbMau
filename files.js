@@ -1,4 +1,4 @@
-// OPEN FILE-EXPLORER
+// OPEN FILE-EXPLORER AND UPLOAD FILE TO SERVER
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('openFileExplorer').addEventListener('click', function() {
         document.getElementById('fileInput').click();
@@ -34,3 +34,40 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+// OPEN FILE
+function openFile(fileName) {
+    // open here
+}
+
+// DOWNLOAD FILE
+function downloadFile(fileName) {
+    const downloadLink = document.createElement('a');
+    downloadLink.href = `/api/storage/download?fileName=${fileName}`;
+    downloadLink.download = fileName;
+    downloadLink.click();
+}
+
+// DELETE FILE
+function deleteFile(fileName) {
+    fetch('/api/storage/delete', {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ fileName: fileName })
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log("File deleted successfully.");
+            // success
+        } else {
+            console.error("File deletion failed.");
+            // fail
+        }
+    })
+    .catch(error => {
+        console.error("Error deleting file: " + error);
+        // error
+    });
+}
