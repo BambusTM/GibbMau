@@ -78,6 +78,7 @@ function performLogin() {
     password instanceof HTMLInputElement
   ) {
     login(username.value, password.value);
+    location.reload()
   }
 }
 
