@@ -143,7 +143,7 @@
       <hr>
 
       <!-- FILES -->
-      <div class="filesBig">
+      <div class="filesBig" id="fileList">
         <div class="bigFileContainer" id="file1">
           <div class="bigFileDiv">
             <div onclick="openFile('example.txt')">
@@ -162,68 +162,22 @@
             </div>
           </div>
           <div class="nameDiv">
-            <label for="file1">example.txt</label>
-          </div>
-        </div>
-
-
-        <div class="bigFileContainer" id="file2">
-          <div class="bigFileDiv">
-            <img src="/rsc/folder_small.png" alt="404" /><br>
-            <div class="bigFileBtnDiv">
-              <button title="delete file" onclick="trash()"><img src="rsc/delete.png" alt="404"></button>
-              <button title="download file" onclick="download()"><img src="rsc/cloud-computing.png" alt="404"></button>
-              <button title="share file" onclick="togglePopup('share_file')"><img src="rsc/share_icon.png"
-                  alt="404"></button>
-            </div>
-          </div>
-          <div class="nameDiv">
-            <label for="">file_name</label>
-          </div>
-        </div>
-
-        <div class="bigFileContainer">
-          <div class="bigFileDiv">
-            <img src="/rsc/folder_small.png" alt="404" /><br>
-            <div class="bigFileBtnDiv">
-              <button title="delete file" onclick="trash()"><img src="rsc/delete.png" alt="404"></button>
-              <button title="download file" onclick="download()"><img src="rsc/cloud-computing.png" alt="404"></button>
-              <button title="share file" onclick="togglePopup('share_file')"><img src="rsc/share_icon.png"
-                  alt="404"></button>
-            </div>
-          </div>
-          <div class="nameDiv">
-            <label for="">file_name</label>
-          </div>
-        </div>
-
-        <div class="bigFileContainer">
-          <div class="bigFileDiv">
-            <img src="/rsc/folder_small.png" alt="404" /><br>
-            <div class="bigFileBtnDiv">
-              <button title="delete file" onclick="trash()"><img src="rsc/delete.png" alt="404"></button>
-              <button title="download file" onclick="download()"><img src="rsc/cloud-computing.png" alt="404"></button>
-              <button title="share file" onclick="togglePopup('share_file')"><img src="rsc/share_icon.png"
-                  alt="404"></button>
-            </div>
-          </div>
-          <div class="nameDiv">
-            <label for="">file_name</label>
+            <label for="file1">todo.txt</label>
           </div>
         </div>
       </div>
-    </div>
-    <span id="sharePopup" class="popup">
-      <form class="share">
-        <div>
+      <span id="sharePopup" class="popup">
+        <form class="share">
           <div>
-            <h3>You are logged in as: </h3>
-            <h3>test</h3>
+            <div>
+              <ul>
+                <li>user123</li>
+              </ul>
+            </div>
+            <button onclick="closePopup('sharePopup', event);">close</button>
           </div>
-          <button onclick="closePopup('sharePopup', event);">close</button>
-        </div>
-      </form>
-    </span>
+        </form>
+      </span>
   </main>
 
   <!-- FOOTER -->

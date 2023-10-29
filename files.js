@@ -1,11 +1,11 @@
 // OPEN FILE-EXPLORER AND UPLOAD FILE TO SERVER
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById('openFileExplorer').addEventListener('click', function() {
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById('openFileExplorer').addEventListener('click', function () {
         document.getElementById('fileInput').click();
     });
 
     // Event-Listener for inputfield
-    document.getElementById('fileInput').addEventListener('change', function(e) {
+    document.getElementById('fileInput').addEventListener('change', function (e) {
         const selectedFiles = e.target.files; // List of selected files
 
         for (let i = 0; i < selectedFiles.length; i++) {
@@ -20,21 +20,21 @@ document.addEventListener("DOMContentLoaded", function() {
             fetch('http://localhost:3000/storage/upload', {
                 method: 'POST',
                 body: formData,
-                headers:{
+                headers: {
                     Authorization: "Bearer " + extractAccessTokenHeader(),
-                    accept:"application/json", 
+                    accept: "application/json",
                 }
             })
-            .then(response => {
-                if (response.ok) {
-                    console.log("Successfully uploaded");
-                } else {
-                    console.error("Failed to upload file");
-                }
-            })
-            .catch(error => {
-                console.error("Error while uploading file: " + error);
-            });
+                .then(response => {
+                    if (response.ok) {
+                        console.log("Successfully uploaded");
+                    } else {
+                        console.error("Failed to upload file");
+                    }
+                })
+                .catch(error => {
+                    console.error("Error while uploading file: " + error);
+                });
         }
     });
 });
@@ -52,7 +52,7 @@ function downloadFile(fileName) {
         headers: {
             Authorization: "Bearer " + extractAccessTokenHeader(),
         },
-    }).then(res => res.blob()).then( blob => {
+    }).then(res => res.blob()).then(blob => {
         const file = URL.createObjectURL(blob);
         const downloadLink = document.createElement('a');
         downloadLink.href = file;
@@ -61,8 +61,6 @@ function downloadFile(fileName) {
     }
 
     );
-
-
 }
 
 // DELETE FILE
@@ -72,23 +70,82 @@ function deleteFile(fileName) {
         headers: {
             'Content-Type': 'application/json',
             Authorization: "Bearer " + extractAccessTokenHeader(),
-            accept:"application/json", 
+            accept: "application/json",
             "Content-Type": "application/json"
 
         },
         body: JSON.stringify({ files: [fileName] })
     })
-    .then(response => {
-        if (response.ok) {
-            console.log("File deleted successfully.");
-            // success
-        } else {
-            console.error("File deletion failed.");
-            // fail
-        }
+        .then(response => {
+            if (response.ok) {
+                console.log("File deleted successfully.");
+                // success
+            } else {
+                console.error("File deletion failed.");
+                // fail
+            }
+        })
+        .catch(error => {
+            console.error("Error deleting file: " + error);
+            // error
+        });
+}
+
+// GET FILES FROM DATABASE AND CREATE FILE DIV
+fetch('/storage/list')
+    .then(response => response.json())
+    .then(files => {
+
+        // Referenz zur Liste
+        const fileList = document.getElementById('fileList');
+
+        files.forEach((file, index) => {
+            // Erstellen Sie ein Container-Div für jede Datei
+            const fileContainer = document.createElement('div');
+            fileContainer.className = 'bigFileContainer';
+
+            // Erstellen Sie ein Bild für die Datei (hier als Platzhalter)
+            const fileImage = document.createElement('img');
+            fileImage.src = "/rsc/folder_small.png";
+            fileImage.alt = "404";
+
+            // Erstellen Sie ein Div für die Dateiaktionen (Löschen, Herunterladen, Teilen)
+            const actionDiv = document.createElement('div');
+            actionDiv.className = 'bigFileBtnDiv';
+
+            // Erstellen Sie die Buttons für Aktionen
+            const deleteButton = document.createElement('button');
+            deleteButton.title = 'delete file';
+            deleteButton.innerHTML = '<img src="rsc/delete.png" alt="404">';
+            deleteButton.addEventListener('click', () => deleteFile(file.name));
+
+            const downloadButton = document.createElement('button');
+            downloadButton.title = 'download file';
+            downloadButton.innerHTML = '<img src="rsc/cloud-computing.png" alt="404">';
+            downloadButton.addEventListener('click', () => downloadFile(file.name));
+
+            const shareButton = document.createElement('button');
+            shareButton.title = 'share file';
+            shareButton.innerHTML = '<img src="rsc/share_icon.png" alt="404">';
+            shareButton.addEventListener('click', () => togglePopup('sharePopup'));
+
+            // Erstellen Sie ein Label für den Dateinamen
+            const nameLabel = document.createElement('label');
+            nameLabel.htmlFor = `file${index + 1}`;
+            nameLabel.textContent = file.name;
+
+            // Fügen Sie die erstellten Elemente zur Container-Div hinzu
+            fileContainer.appendChild(fileImage);
+            fileContainer.appendChild(actionDiv);
+            actionDiv.appendChild(deleteButton);
+            actionDiv.appendChild(downloadButton);
+            actionDiv.appendChild(shareButton);
+            fileContainer.appendChild(nameLabel);
+
+            // Fügen Sie die Container-Div zur Liste hinzu
+            fileList.appendChild(fileContainer);
+        });
     })
     .catch(error => {
-        console.error("Error deleting file: " + error);
-        // error
+        console.error('Fehler beim Abrufen der Dateien: ' + error);
     });
-}
