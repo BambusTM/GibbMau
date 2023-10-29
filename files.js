@@ -13,7 +13,24 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log("Dateiname: " + file.name);
             console.log("Dateigröße: " + file.size + " Bytes");
 
-            // upload to server mit fetch api
+            const formData = new FormData();
+            formData.append('file', file);
+
+            // using fetch API to send file(s) to the server
+            fetch('/api/storage/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log("Successfully uploaded");
+                } else {
+                    console.error("Failed to upload file");
+                }
+            })
+            .catch(error => {
+                console.error("Error while uploading file: " + error);
+            });
         }
     });
 });
