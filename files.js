@@ -43,14 +43,14 @@ function openFile(fileName) {
 // DOWNLOAD FILE
 function downloadFile(fileName) {
     const downloadLink = document.createElement('a');
-    downloadLink.href = `/api/storage/download?fileName=${fileName}`;
+    downloadLink.href = `${getHost("storage/download")}?fileName=${fileName}`;
     downloadLink.download = fileName;
     downloadLink.click();
 }
 
 // DELETE FILE
 function deleteFile(fileName) {
-    fetch('/api/storage/delete', {
+    fetch(getHost('storage/delete'), {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'

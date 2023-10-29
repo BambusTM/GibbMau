@@ -1,6 +1,6 @@
 const users = document.getElementById("users");
-const usersUrl = "http://localhost:3000/auth/users";
-const deleteUserUrl = "http://localhost:3000/auth/delete";
+const usersUrl = getHost("auth/users");
+const deleteUserUrl = getHost("auth/delete");
 
 console.log(JSON.stringify(users));
 

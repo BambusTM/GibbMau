@@ -1,5 +1,5 @@
 // URL
-const isAdminUrl = "http://localhost:3000/admin/is";
+const isAdminUrl = getHost("admin/is");
 
 // POPUPS
 function togglePopup(popupId) {

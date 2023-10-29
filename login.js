@@ -1,8 +1,15 @@
 // @ts-check
+/**
+ * 
+ * @returns {string} get host
+ */
+function getHost(route) {
+  return `http://${location.host}:3000/${route}`;
+}
 
 // LOGIN
-const loginUrl = "http://localhost:3000/auth/login";
-const signupUrl = "http://localhost:3000/auth/signup";
+const loginUrl = getHost("auth/login");
+const signupUrl = getHost("auth/signup");
 
 /**
  * 
