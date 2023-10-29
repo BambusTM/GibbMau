@@ -15,6 +15,13 @@ function togglePopup(popupId) {
   }
 }
 
+function closePopup(popupId, event) {
+  event.preventDefault();
+  var popup = document.getElementById(popupId);
+  popup.classList.toggle("show");
+}
+
+
 // ADMIN PAGE
 fetch(isAdminUrl, {
   method: "GET",

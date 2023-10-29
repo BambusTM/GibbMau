@@ -156,7 +156,7 @@
               <button title="download file" onclick="downloadFile('todo.txt')">
                 <img src="rsc/cloud-computing.png" alt="404">
               </button>
-              <button title="share file" onclick="togglePopup('share_file')">
+              <button title="share file" onclick="togglePopup('sharePopup')">
                 <img src="rsc/share_icon.png" alt="404">
               </button>
             </div>
@@ -213,6 +213,17 @@
         </div>
       </div>
     </div>
+    <span id="sharePopup" class="popup">
+      <form class="share">
+        <div>
+          <div>
+            <h3>You are logged in as: </h3>
+            <h3>test</h3>
+          </div>
+          <button onclick="closePopup('sharePopup', event);">close</button>
+        </div>
+      </form>
+    </span>
   </main>
 
   <!-- FOOTER -->

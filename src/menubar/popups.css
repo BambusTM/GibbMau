@@ -124,3 +124,10 @@ form {
   text-align: center;
   border-radius: 0px;
 }
+
+/* SHARE */
+
+.popup .share {
+  text-align: center;
+  z-index: 5;
+}
