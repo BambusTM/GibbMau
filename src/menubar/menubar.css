@@ -9,6 +9,7 @@
   height: 4em;
   background-color: #000000;
   overflow: visible;
+  z-index: 5;
   align-items: center;
 }
 
