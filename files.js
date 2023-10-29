@@ -107,6 +107,7 @@ fetch(getHost('storage/list'),
         const fileList = document.getElementById('fileList');
 
         files.files.forEach((/** @type {string} */ file, index) => {
+            var file = file.replace(/\\/g,'/');
             var file = file.replace('.cloud/users/', '');
             var file = file.slice(file.indexOf('/') + 1, file.length);
 
