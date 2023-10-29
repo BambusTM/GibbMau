@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         for (let i = 0; i < selectedFiles.length; i++) {
             const file = selectedFiles[i];
-            console.log("File name: " + file.name);
+            console.log("File name: " + file);
             console.log("File size: " + file.size + " Bytes");
 
             const formData = new FormData();
@@ -114,7 +114,7 @@ fetch(getHost('storage/list'),
 
             const imageDiv = document.createElement('div');
             imageDiv.onclick = function () {
-                openFile(file.name);
+                openFile(file);
             };
 
             const fileImage = document.createElement('img');
@@ -128,7 +128,7 @@ fetch(getHost('storage/list'),
             const deleteButton = document.createElement('button');
             deleteButton.title = 'delete file';
             deleteButton.onclick = function () {
-                deleteFile(file.name);
+                deleteFile(file);
             };
 
             const deleteImage = document.createElement('img');
@@ -139,7 +139,7 @@ fetch(getHost('storage/list'),
             const downloadButton = document.createElement('button');
             downloadButton.title = 'download file';
             downloadButton.onclick = function () {
-                downloadFile(file.name);
+                downloadFile(file);
             };
 
             const downloadImage = document.createElement('img');
