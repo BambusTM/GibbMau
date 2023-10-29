@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="/src/main.css" />
   <link rel="stylesheet" href="/src/footer.css" />
   <script src="/login.js"></script>
+  <script src="/files.js"></script>
   <script src="/main.js"></script>
 </head>
 
@@ -127,7 +128,7 @@
     <div class="box">
       <div class="boxHead">
         <h2>RECENTLY USED FILES</h2>
-        <button title="upload file">
+        <button id="openFileExplorer" style="cursor: pointer;">
           <div>
             <div>
               <p>UPLOAD FILES</p>
@@ -137,6 +138,7 @@
             </div>
           </div>
         </button>
+        <input type="file" id="fileInput" style="display: none;">
       </div>
       <hr>
       <div class="filesBig">
