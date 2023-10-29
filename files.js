@@ -46,10 +46,23 @@ function openFile(fileName) {
 
 // DOWNLOAD FILE
 function downloadFile(fileName) {
-    const downloadLink = document.createElement('a');
-    downloadLink.href = `${getHost("storage/download")}?fileName=${fileName}`;
-    downloadLink.download = fileName;
-    downloadLink.click();
+
+    fetch(getHost("storage/download") + `?file=${fileName}`, {
+        method: 'GET',
+        headers: {
+            Authorization: "Bearer " + extractAccessTokenHeader(),
+        },
+    }).then(res => res.blob()).then( blob => {
+        const file = URL.createObjectURL(blob);
+        const downloadLink = document.createElement('a');
+        downloadLink.href = file;
+        downloadLink.download = fileName;
+        downloadLink.click();
+    }
+
+    );
+
+
 }
 
 // DELETE FILE

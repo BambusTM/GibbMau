@@ -63,6 +63,7 @@ function login(username, password) {
           let date = parseJwt(body.access_token);
           alert(JSON.stringify(date));
           document.cookie = `access_token=${body.access_token}; expires=${date.exp}`
+          location.reload();
         });
       }
     })
@@ -80,7 +81,6 @@ function performLogin() {
     password instanceof HTMLInputElement
   ) {
     login(username.value, password.value);
-    location.reload()
   }
 }
 
