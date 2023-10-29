@@ -19,24 +19,60 @@
 /* RECENTLY USED */
 .filesBig {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
-.filesBig button {
-    position: static;
-    border: 1px solid red;
-    margin: 1em;
-    padding: 1em;
-    border-radius: 3px;
+.bigFileContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3em;
+}
+
+.bigFileDiv {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.bigFileDiv img {
+    width: 10em;
+}
+
+.bigFileBtnDiv {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+}
+
+.bigFileBtnDiv button {
     background: none;
-    width: auto;
+    width: 3em;
+    height: 3em;
+    border: none;
 }
 
-.filesBig button:hover {
-    cursor: pointer;
+.bigFileBtnDiv img {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+    position: relative;
+    width: 2em;
 }
 
-.filesBig img {
-    width: 12em;
+.bigFileBtnDiv button:hover {
+    border: none;
+}
+
+.bigFileBtnDiv img:hover {
+    width: 2.2em;
+}
+
+.nameDiv {
+    padding-top: .25em;
+}
+
+.nameDiv label {
+    display: flex;
+    font-size: large;
 }
