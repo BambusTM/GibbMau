@@ -76,7 +76,7 @@ function deleteFile(fileName) {
             "Content-Type": "application/json"
 
         },
-        body: JSON.stringify({ fileName: fileName })
+        body: JSON.stringify({ files: [fileName] })
     })
     .then(response => {
         if (response.ok) {
