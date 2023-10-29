@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
         for (let i = 0; i < selectedFiles.length; i++) {
             const file = selectedFiles[i];
-            console.log("Dateiname: " + file.name);
-            console.log("Dateigröße: " + file.size + " Bytes");
+            console.log("File name: " + file.name);
+            console.log("File size: " + file.size + " Bytes");
 
             const formData = new FormData();
             formData.append('file', file);
