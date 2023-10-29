@@ -4,7 +4,7 @@
  * @returns {string} get host
  */
 function getHost(route) {
-  return `http://${location.host}:3000/${route}`;
+  return `http://${location.hostname}:3000/${route}`;
 }
 
 // LOGIN
@@ -48,10 +48,12 @@ function login(username, password) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      accept: "application/json"
     },
     body: JSON.stringify(data),
   })
     .then((value) => {
+      debugger;
       if (value.status === 401 || value.status === 404) {
         alert("Wrong Username or Password");
       }
