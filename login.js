@@ -87,10 +87,9 @@ function performLogin() {
 // SIGNUP
 /**
  * @param {string} username
- * @param {string} email
  * @param {string} password
  */
-function signup(username, email, password) {
+function signup(username, password) {
   // JSON-format
   const data = {
     username: username,
@@ -129,22 +128,19 @@ function signup(username, email, password) {
 // REGISTER-BUTTON
 function registerUser() {
   const username = document.getElementById("usernameInput");
-  const email = document.getElementById("emailInput");
   const password = document.getElementById("passwordInput");
   const confirmPassword = document.getElementById("confirmPassword");
 
   if (
     username instanceof HTMLInputElement &&
-    email instanceof HTMLInputElement && // evtl. mail entfernen
     password instanceof HTMLInputElement &&
     confirmPassword instanceof HTMLInputElement &&
     password.value == confirmPassword.value
   ) {
-    signup(username.value, email.value, password.value);
+    signup(username.value, password.value);
     console.log(`${username?.value}, ${password?.value}, ${confirmPassword?.value}`)
 
   } else {
-    console.log(`${username?.className}, ${email?.className}, ${username?.className}`)
     console.log("wrong Password or error");
   }
 }
