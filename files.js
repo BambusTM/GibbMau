@@ -106,46 +106,78 @@ fetch(getHost('storage/list'),
         const fileList = document.getElementById('fileList');
 
         files.files.forEach((file, index) => {
-            const fileContainer = document.createElement('div');
-            fileContainer.classList.add('bigFileContainer');
-
             const bigFileContainer = document.createElement('div');
-            bigFileContainer.classList.add('bigFileDiv');
+            bigFileContainer.className = 'bigFileContainer';
+
+            const bigFileDiv = document.createElement('div');
+            bigFileDiv.className = 'bigFileDiv';
+
+            const imageDiv = document.createElement('div');
+            imageDiv.onclick = function () {
+                openFile(file.name);
+            };
 
             const fileImage = document.createElement('img');
-            fileImage.src = "/rsc/folder_small.png";
-            fileImage.alt = "404";
+            fileImage.src = '/rsc/folder_small.png';
+            fileImage.alt = '404';
+            imageDiv.appendChild(fileImage);
 
-            const actionDiv = document.createElement('div');
-            actionDiv.classList.add('bigFileBtnDiv');
+            const bigFileBtnDiv = document.createElement('div');
+            bigFileBtnDiv.className = 'bigFileBtnDiv';
 
             const deleteButton = document.createElement('button');
             deleteButton.title = 'delete file';
-            deleteButton.innerHTML = '<img src="rsc/delete.png" alt="404">';
-            deleteButton.addEventListener('click', () => deleteFile(file.name));
+            deleteButton.onclick = function () {
+                deleteFile(file.name);
+            };
+
+            const deleteImage = document.createElement('img');
+            deleteImage.src = 'rsc/delete.png';
+            deleteImage.alt = '404';
+            deleteButton.appendChild(deleteImage);
 
             const downloadButton = document.createElement('button');
             downloadButton.title = 'download file';
-            downloadButton.innerHTML = '<img src="rsc/cloud-computing.png" alt="404">';
-            downloadButton.addEventListener('click', () => downloadFile(file.name));
+            downloadButton.onclick = function () {
+                downloadFile(file.name);
+            };
+
+            const downloadImage = document.createElement('img');
+            downloadImage.src = 'rsc/cloud-computing.png';
+            downloadImage.alt = '404';
+            downloadButton.appendChild(downloadImage);
 
             const shareButton = document.createElement('button');
             shareButton.title = 'share file';
-            shareButton.innerHTML = '<img src="rsc/share_icon.png" alt="404">';
-            shareButton.addEventListener('click', () => togglePopup('sharePopup'));
+            shareButton.onclick = function () {
+                togglePopup('sharePopup');
+            };
+
+            const shareImage = document.createElement('img');
+            shareImage.src = 'rsc/share_icon.png';
+            shareImage.alt = '404';
+            shareButton.appendChild(shareImage);
+
+            const nameDiv = document.createElement('div');
+            nameDiv.className = 'nameDiv';
 
             const nameLabel = document.createElement('label');
-            nameLabel.htmlFor = `file${index + 1}`;
+            nameLabel.for = 'file1';
             nameLabel.textContent = file;
 
-            fileContainer.appendChild(fileImage);
-            fileContainer.appendChild(actionDiv);
-            actionDiv.appendChild(deleteButton);
-            actionDiv.appendChild(downloadButton);
-            actionDiv.appendChild(shareButton);
-            bigFileContainer.appendChild(nameLabel);
+            bigFileDiv.appendChild(imageDiv);
+            bigFileDiv.appendChild(bigFileBtnDiv);
+            bigFileBtnDiv.appendChild(deleteButton);
+            bigFileBtnDiv.appendChild(downloadButton);
+            bigFileBtnDiv.appendChild(shareButton);
+            nameDiv.appendChild(nameLabel);
 
-            fileList.appendChild(fileContainer);
+            bigFileContainer.appendChild(bigFileDiv);
+            bigFileContainer.appendChild(nameDiv);
+
+            fileList.appendChild(bigFileContainer);
+
+
         });
     })
     .catch(error => {
