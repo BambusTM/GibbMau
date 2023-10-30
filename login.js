@@ -119,6 +119,7 @@ function signup(username, password) {
     .then((userData) => {
       // use data after registration
       console.log("Successful registration:", userData);
+      location.reload();
     })
     .catch((error) => {
       console.error("Registration ERROR ->", error);
