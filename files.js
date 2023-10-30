@@ -28,14 +28,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 .then(response => {
                     if (response.ok) {
                         console.log("Successfully uploaded");
+                        location.reload();
                     } else {
                         console.error("Failed to upload file");
+                        location.reload();
+
                     }
                 })
                 .catch(error => {
                     console.error("Error while uploading file: " + error);
+                    location.reload();
+
                 });
-        }
+                window.location.reload();
+                
+            }
     });
 });
 
@@ -79,13 +86,16 @@ function deleteFile(fileName) {
             if (response.ok) {
                 console.log("File deleted successfully.");
                 // success
+                location.reload();
             } else {
                 console.error("File deletion failed.");
+
                 // fail
             }
         })
         .catch(error => {
             console.error("Error deleting file: " + error);
+
             // error
         });
 }
